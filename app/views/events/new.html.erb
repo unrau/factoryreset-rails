@@ -2,7 +2,7 @@
   <h4>>> create a new event</h4>
 </div>
 
-<%= form_for :article do |f| %>
+<%= form_for :event, url: events_path do |f| %>
 
     <p>
       <%= f.label :game_title %><br>
