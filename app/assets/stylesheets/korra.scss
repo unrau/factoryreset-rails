@@ -1,34 +1,40 @@
 
-//              __
-//            ⊂(oo)⊃
-//      /-----/ VV
-//     / |      |
-//    *  ||vv--||
-//       ||    ||
+//               (__)
+//              ⊂(oo)⊃
+//        /-----/ VV
+//       / |      |
+//      *  ||vv--||
+//         ||    ||
 //
-//     cow dracula
+// cow dracula's sassy styles
 
 
 
 
 // Colours
+$white: #ffffff;
+$yellow: #faf21b;
+$gold: #b7ba58;
+$hackergreen: #72ee7b;
+
 $grey1: #8c8c8c;
 $grey2: #7d7d7d;
 $grey3: #4c4c4c;
-
-$hackergreen: #72ee7b;
+$grey4: #383838;
 
 $ylinkn: #c1ee72;
 $ylinkh: #9ac351;
 $ylinka: #5a7e1c;
 
 $glinkn: #bfbfbf;
-$glinkh: #ffffff;
-$glinka: #ffffff;
+$glinkh: $white;
+$glinka: $white;
 
 // Images
 $headerimg: image-url('header.png');
 $headertile: image-url('header-bg.png');
+$buttonsmall: image-url('small-button.png');
+$buttonbig: image-url('header-button.png');
 
 
 
@@ -65,6 +71,32 @@ h4 {
   margin: 4px 0 4px 0;
 }
 
+label {
+  color: $white;
+}
+
+input, textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 26px;
+  margin: 5px 0 8px 0;
+  background-color: $grey4;
+  border : 0;
+  border-radius: 4px;
+  font-size: 16px;
+  color: $yellow;
+  outline: none;
+}
+
+input {
+  padding: 3px 6px;
+}
+
+textarea {
+  min-height: 200px;
+  padding: 6px;
+}
+
 
 
 
@@ -72,7 +104,7 @@ h4 {
 
 #container {
   width: 640px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 40px auto;
 }
 
 #header {
@@ -81,13 +113,8 @@ h4 {
   background-image: $headerimg;
 }
 
-#welcome {
-  margin: 20px 0 0 0;
-  color: $hackergreen;
-}
-
 #content {
-  margin: 40px 0 40px 0;
+  margin: 0 0 40px 0;
 }
 
 #footer {
@@ -108,3 +135,28 @@ h4 {
 
 // Classes
 
+.welcome {
+  margin: 0;
+  color: $hackergreen;
+}
+.lastwelcome {
+  margin-bottom: 40px;
+}
+
+.button-small {
+  width: 150px;
+  height: 45px;
+  background: $buttonsmall top;
+  color: $grey4;
+  cursor: pointer;
+  outline: none;
+}
+.button-small:hover {
+  background-position: center;
+}
+.button-small:active {
+  background-position: bottom;
+}
+.button-small:focus {
+  color: $gold;
+}
