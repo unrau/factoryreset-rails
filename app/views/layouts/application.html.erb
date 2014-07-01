@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="container">
 
-<%= yield %>
+  <div id="header"></div>
 
+  <div id="welcome">
+    <h4>>> user recognized: (<a href="#">user</a>) (<a href="#">log out</a>)</h4>
+    <h4>>> ai.message: ""</h4>
+    <h4>>> </h4>
+    <h4>>> show_events(upcoming) | link(<a href="#">show past events</a>)</h4>
+  </div>
+
+  <div id="content">
+
+    <%= yield %>
+
+  </div>
+
+  <div id="footer">
+    <h4>>> Factory Reset is a small gaming group in Vancouver</h4>
+    <h4>>> This website is created and owned by <a href="http://www.chloeunrau.com">Chloe Unrau</a>.</h4>
+  </div>
+
+</div> <!-- container -->
 </body>
 </html>

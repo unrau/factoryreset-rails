@@ -1,5 +1,110 @@
-$lightgrey = #8c8c8c;
+
+//             ^__^
+//             (oo)
+//      /-------VV
+//     / |      |
+//    *  ||vv--||
+//       ||    ||
+//
+//     cow dracula
+
+
+
+
+// Colours
+$grey1: #8c8c8c;
+$grey2: #7d7d7d;
+$grey3: #4c4c4c;
+
+$hackergreen: #72ee7b;
+
+$ylinkn: #c1ee72;
+$ylinkh: #9ac351;
+$ylinka: #5a7e1c;
+
+$glinkn: #bfbfbf;
+$glinkh: #ffffff;
+$glinka: #ffffff;
+
+// Images
+$headerimg: image-url('header.png');
+$headertile: image-url('header-bg.png');
+
+
+
+
+// Global Styles
+
+html {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: $lightgrey;
+  margin: 0;
+  background: $grey3 $headertile repeat-x;
+  color: $grey2;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: normal;
 }
+a, a:link {
+  color: $ylinkn;
+  text-decoration: none;
+}
+a:hover {
+  color: $ylinkh;
+}
+a:active {
+  color: $ylinka;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 4px 0 4px 0;
+}
+
+
+
+
+// IDs
+
+#container {
+  width: 640px;
+  margin: 0 auto 0 auto;
+}
+
+#header {
+  width: 640px;
+  height: 270px;
+  background-image: $headerimg;
+}
+
+#welcome {
+  margin: 20px 0 0 0;
+  color: $hackergreen;
+}
+
+#content {
+  margin: 40px 0 40px 0;
+}
+
+#footer {
+
+  a, a:link {
+    color: $glinkn;
+  }
+  a:hover {
+    color: $glinkh;
+  }
+  a:active {
+    color: $glinka;
+  }
+}
+
+
+
+
+// Classes
+
