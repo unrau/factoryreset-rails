@@ -3,6 +3,7 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :game_title
       t.string :session_title
+      t.string :event_image
       t.datetime :date_time
       t.string :address
       t.string :instructions
