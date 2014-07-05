@@ -11,13 +11,16 @@
 
 
 
-// Colours
+// Vars: Colours
 $white: #ffffff;
 $yellow: #faf21b;
 $gold: #b7ba58;
+$midgold: #a9ac50;
+$darkgold: #989b45;
 $beige: #f0ede5;
 $hackergreen: #72ee7b;
 $orangered: #ff6762;
+$darkorangered: #c53a3a;
 
 $grey0: #dedede;
 $grey5: #9e9e9e;
@@ -34,23 +37,37 @@ $glinkn: #bfbfbf;
 $glinkh: $white;
 $glinka: $white;
 
-// Images
+// Vars: Images
 $headerimg: url('header.png');
 $headertile: url('header-bg.png');
 $buttonsmall: url('small-button.png');
 $buttonbig: url('header-button.png');
 
-// Fonts
+// Vars: Fonts
 
-@mixin pixel-font {
-  font-family: 'VT323', monospace;
+$pixel-font: 'VT323', monospace;
+
+$hacker-font: 'PT Monoo', monospace;
+
+// Vars: Shadows
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .65);
+  -moz-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .65);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .65);
+}
+@mixin button-shadow-nh {
+  -webkit-box-shadow: 0 2px 8px 0 rgba(0,0,0,.65);
+  -moz-box-shadow: 0 2px 8px 0 rgba(0,0,0,.65);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,.65);
+}
+@mixin button-shadow-a {
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,.65);
+  -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,.65);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.65);
 }
 
-@mixin hacker-font {
-  font-family: 'PT Monoo', monospace;
-}
-
-// Borders
+// Vars: Others
 
 $event-border: 2px solid $grey0;
 
@@ -70,7 +87,7 @@ body {
   color: $grey20;
   font-size: 14px;
   font-weight: normal;
-  @include hacker-font;
+  font-family: $hacker-font;
 }
 a, a:link {
   color: $ylinkn;
@@ -126,6 +143,7 @@ textarea {
 }
 
 #header {
+  position: relative;
   width: 640px;
   height: 270px;
   background-image: $headerimg;
@@ -165,6 +183,23 @@ textarea {
   margin-bottom: 40px;
 }
 
+.button-wee {
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+  background-color: $gold;
+  color: $darkorangered !important;
+  @include button-shadow-nh;
+}
+.button-wee:hover {
+  background-color: $midgold;
+  color: $darkorangered;
+}
+.button-wee:active {
+  background-color: $darkgold;
+  color: $darkorangered;
+  @include button-shadow-a;
+}
+
 .button-small {
   width: 150px;
   height: 45px;
@@ -172,6 +207,8 @@ textarea {
   color: $grey40;
   cursor: pointer;
   outline: none;
+  font-family: $pixel-font;
+  font-size: 20px;
 }
 .button-small:hover {
   background-position: center;
@@ -183,6 +220,33 @@ textarea {
   color: $gold;
 }
 
+.button-big {
+  width: 213px;
+  height: 47px;
+  background: $buttonbig top;
+  font-family: $pixel-font;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #dedede;
+  padding-top: 17px;
+}
+.button-big:hover {
+  background-position: center;
+}
+.button-big:active {
+  background-position: bottom;
+}
+.button-big:focus {
+  color: $grey10;
+}
+
+.header-button {
+  position: absolute;
+  top: 140px;
+  left: 420px;
+}
+
 
 
 
@@ -191,92 +255,102 @@ textarea {
 .event {
   margin-bottom: 40px;
   width: 640px;
-}
+  @include box-shadow;
 
-.event .top {
-  height: 56px;
-  background-color: $grey20;
-  padding: 0 10px 0 10px;
-  border-bottom: $event-border;
-  @include pixel-font;
-}
+  .top {
+    height: 56px;
+    background-color: $grey20;
+    padding: 0 10px 0 10px;
+    border-bottom: $event-border;
+    font-family: $pixel-font;
 
-.event .top .date {
-  width: 45%;
-  float: left;
-  padding-top: 6px;
-  color: $orangered;
-  font-size: 40px;
+    .date {
+      width: 45%;
+      float: left;
+      padding-top: 6px;
+      color: $orangered;
+      font-size: 40px;
+    }
 
-}
+    .game {
+      width: 55%;
+      float: right;
+      padding-top: 14px;
+      text-align: right;
+      color: $grey0;
+      font-size: 30px;
+    }
+  }
 
-.event .top .game {
-  width: 55%;
-  float: right;
-  padding-top: 14px;
-  text-align: right;
-  color: $grey0;
-  font-size: 30px;
-}
+  .image {
+    height: 154px;
+    background-color: $grey40;
+    border-bottom: $event-border;
 
-.event .image {
-  height: 154px;
-  background-color: $grey40;
-  border-bottom: $event-border;
-}
+    img {
+      width: 640px;
+      max-width: 640px;
+      min-width: 640px;
+      height: auto;
+    }
+  }
 
-.event .image img {
-  width: 640px;
-  max-width: 640px;
-  min-width: 640px;
-  height: auto;
-}
+  .content {
+    min-height: 150px;
+    background-color: $grey5;
+    padding: 10px;
 
-.event .content {
-  min-height: 150px;
-  background-color: $grey5;
-  padding: 10px;
-}
+    .description {
+      float: left;
+      width: 70%;
+      color: $white;
+      font-size: 16px;
 
-.event .content .description {
-  float: left;
-  width: 70%;
-  color: $white;
-  font-size: 16px;
-}
+      h4 {
+        color: $white;
+        font-size: 24px;
+        font-family: $pixel-font;
+      }
 
-.event .content .description h4 {
-  color: $white;
-  font-size: 24px;
-  @include pixel-font;
-}
+      .time {
+        color: $yellow;
+      }
+    }
 
-.event .content .description .time {
-  color: $yellow;
-}
+    .location {
+      float: right;
+      width: 30%;
+      color: $beige;
+      text-align: right;
+      padding: 0 0 20px 0;
+    }
 
-.event .content .location {
-  float: right;
-  width: 30%;
-  color: $beige;
-  text-align: right;
-  padding: 0 0 20px 0;
-}
+    .control {
+      float: left;
+      margin-top: 30px;
+    }
 
-.event .bottom {
-  height: 104px;
-  background-color: $grey20;
-  border-top: $event-border;
-  border-bottom: $event-border;
-}
+    .rsvp {
+      float: right;
+      text-align: right;
+    }
+  }
 
-.event .bottom .others {
-  float: left;
-}
+  .bottom {
+    height: 104px;
+    background-color: $grey20;
+    border-top: $event-border;
+    border-bottom: $event-border;
 
-.event .bottom .host {
-  width: 78px;
-  height: 100%;
-  background-color: $grey0;
-  float: right;
+    .attendees {
+      float: left;
+    }
+
+    .host {
+      width: 78px;
+      height: 100%;
+      background-color: $grey0;
+      float: right;
+    }
+  }
 }

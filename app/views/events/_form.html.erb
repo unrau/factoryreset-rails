@@ -1,0 +1,42 @@
+<%= form_for :event, url: events_path do |f| %>
+
+    <p>
+      <%= f.label(:date_time, 'Date and time') %><br>
+      <%= f.datetime_select :date_time %>
+    </p>
+
+    <p>
+      <%= f.label :game_title %><br>
+      <%= f.text_field :game_title %>
+    </p>
+
+    <p>
+      <%= f.label :session_title %><br>
+      <%= f.text_field :session_title %>
+    </p>
+
+    <p>
+      <%= f.label(:event_image, 'Image URL') %><br>
+      <%= f.text_field :event_image %>
+    </p>
+
+    <p>
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </p>
+
+    <p>
+      <%= f.label :instructions %><br>
+      <%= f.text_field :instructions %>
+    </p>
+
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </p>
+
+    <p>
+      <%= f.submit(value:'Submit',class:'button-small')%>
+    </p>
+
+<% end %>

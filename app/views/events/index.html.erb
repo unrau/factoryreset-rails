@@ -11,15 +11,12 @@
     <div class="event">
 
       <div class="top">
-
         <div class="date"><%= event.date_time.strftime('%a %e %b %Y') %></div>
-
         <div class="game"><%= event.game_title %></div>
-
         <div class="clearfix"></div>
-
       </div>
 
+      <!-- TODO: replace this image validation with a proper one inside the event model -->
       <% if event.event_image.ends_with?('jpg', 'jpeg', 'png', 'gif', 'tiff') %>
         <div class="image"><img src="<%= event.event_image %>" /></div>
       <% end %>
@@ -27,22 +24,19 @@
       <div class="content">
 
         <div class="description">
-
           <h4><%= event.session_title %></h4>
-
           <h4>Starts at <span class="time"><%= event.date_time.strftime('%l:%M %p') %></span></h4>
-
           <% event.description.lines.each do |line| %>
             <p><%= line %></p>
           <% end %>
-
         </div>
 
         <div class="location">
 
           <div class="map">
             <a href="https://www.google.ca/maps/place/<%= event.address %>" target ="_blank">
-              <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= event.address %>&zoom=15&size=170x150&maptype=roadmap&markers=<%= event.address %>" />
+              <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= event.address %>
+                        &zoom=15&size=170x150&maptype=roadmap&markers=<%= event.address %>" />
             </a>
           </div>
 
@@ -55,16 +49,23 @@
 
         <div class="clearfix"></div>
 
-        <div class="control"></div>
+        <!-- TODO: Only show control div if event belongs to logged-in user -->
+        <div class="control">
+          <%= link_to 'Edit Event', edit_event_path(event), :class => 'button-wee' %>
+          <%= link_to 'Delete Event', event, method: :delete, data: {
+              confirm: 'Delete this event? This cannot be undone.' }, :class => 'button-wee' %>
+        </div>
 
-        <div class="rsvp"></div>
+        <div class="rsvp">
+          <a href="#"><div class="button-big">RSVP</div></a>
+        </div>
 
         <div class="clearfix"></div>
 
       </div>
 
       <div class="bottom">
-        <div class="others"></div>
+        <div class="attendees"></div>
         <div class="host"></div>
         <div class="clearfix"></div>
       </div>
