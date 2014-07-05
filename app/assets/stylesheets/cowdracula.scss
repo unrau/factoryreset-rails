@@ -15,12 +15,16 @@
 $white: #ffffff;
 $yellow: #faf21b;
 $gold: #b7ba58;
+$beige: #f0ede5;
 $hackergreen: #72ee7b;
+$orangered: #ff6762;
 
-$grey1: #8c8c8c;
-$grey2: #7d7d7d;
-$grey3: #4c4c4c;
-$grey4: #383838;
+$grey0: #dedede;
+$grey5: #9e9e9e;
+$grey10: #8c8c8c;
+$grey20: #7d7d7d;
+$grey30: #4c4c4c;
+$grey40: #383838;
 
 $ylinkn: #c1ee72;
 $ylinkh: #9ac351;
@@ -36,6 +40,20 @@ $headertile: url('header-bg.png');
 $buttonsmall: url('small-button.png');
 $buttonbig: url('header-button.png');
 
+// Fonts
+
+@mixin pixel-font {
+  font-family: 'VT323', monospace;
+}
+
+@mixin hacker-font {
+  font-family: 'PT Monoo', monospace;
+}
+
+// Borders
+
+$event-border: 2px solid $grey0;
+
 
 
 
@@ -48,11 +66,11 @@ html {
 
 body {
   margin: 0;
-  background: $grey3 $headertile repeat-x;
-  color: $grey2;
-  font-family: monospace;
+  background: $grey30 $headertile repeat-x;
+  color: $grey20;
   font-size: 14px;
   font-weight: normal;
+  @include hacker-font;
 }
 a, a:link {
   color: $ylinkn;
@@ -80,7 +98,7 @@ input, textarea {
   max-width: 100%;
   min-height: 26px;
   margin: 5px 0 8px 0;
-  background-color: $grey4;
+  background-color: $grey40;
   border : 0;
   border-radius: 4px;
   font-size: 16px;
@@ -100,7 +118,7 @@ textarea {
 
 
 
-// IDs
+// Misc IDs
 
 #container {
   width: 640px;
@@ -133,7 +151,11 @@ textarea {
 
 
 
-// Classes
+// Misc Classes
+
+.clearfix {
+  clear: both;
+}
 
 .welcome {
   margin: 0;
@@ -147,7 +169,7 @@ textarea {
   width: 150px;
   height: 45px;
   background: $buttonsmall top;
-  color: $grey4;
+  color: $grey40;
   cursor: pointer;
   outline: none;
 }
@@ -159,4 +181,102 @@ textarea {
 }
 .button-small:focus {
   color: $gold;
+}
+
+
+
+
+// Event Classes
+
+.event {
+  margin-bottom: 40px;
+  width: 640px;
+}
+
+.event .top {
+  height: 56px;
+  background-color: $grey20;
+  padding: 0 10px 0 10px;
+  border-bottom: $event-border;
+  @include pixel-font;
+}
+
+.event .top .date {
+  width: 45%;
+  float: left;
+  padding-top: 6px;
+  color: $orangered;
+  font-size: 40px;
+
+}
+
+.event .top .game {
+  width: 55%;
+  float: right;
+  padding-top: 14px;
+  text-align: right;
+  color: $grey0;
+  font-size: 30px;
+}
+
+.event .image {
+  height: 154px;
+  background-color: $grey40;
+  border-bottom: $event-border;
+}
+
+.event .image img {
+  width: 640px;
+  max-width: 640px;
+  min-width: 640px;
+  height: auto;
+}
+
+.event .content {
+  min-height: 150px;
+  background-color: $grey5;
+  padding: 10px;
+}
+
+.event .content .description {
+  float: left;
+  width: 70%;
+  color: $white;
+  font-size: 16px;
+}
+
+.event .content .description h4 {
+  color: $white;
+  font-size: 24px;
+  @include pixel-font;
+}
+
+.event .content .description .time {
+  color: $yellow;
+}
+
+.event .content .location {
+  float: right;
+  width: 30%;
+  color: $beige;
+  text-align: right;
+  padding: 0 0 20px 0;
+}
+
+.event .bottom {
+  height: 104px;
+  background-color: $grey20;
+  border-top: $event-border;
+  border-bottom: $event-border;
+}
+
+.event .bottom .others {
+  float: left;
+}
+
+.event .bottom .host {
+  width: 78px;
+  height: 100%;
+  background-color: $grey0;
+  float: right;
 }

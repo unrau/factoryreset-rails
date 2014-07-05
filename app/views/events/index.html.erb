@@ -1,7 +1,76 @@
 <div class="welcome lastwelcome">
-  <h4>>> ai.message: "<%= @random_message %>"</h4>
+  <h4>>> ai.message: "<%= get_random_message %>"</h4>
   <h4>>> </h4>
   <h4>>> show_events(upcoming) | link(<a href="#">show past events</a>)</h4>
 </div>
 
-content
+<% @events.each do |event| %>
+
+  <% if event.date_time > Date.today %>
+
+    <div class="event">
+
+      <div class="top">
+
+        <div class="date"><%= event.date_time.strftime('%a %e %b %Y') %></div>
+
+        <div class="game"><%= event.game_title %></div>
+
+        <div class="clearfix"></div>
+
+      </div>
+
+      <% if event.event_image.ends_with?('jpg', 'jpeg', 'png', 'gif', 'tiff') %>
+        <div class="image"><img src="<%= event.event_image %>" /></div>
+      <% end %>
+
+      <div class="content">
+
+        <div class="description">
+
+          <h4><%= event.session_title %></h4>
+
+          <h4>Starts at <span class="time"><%= event.date_time.strftime('%l:%M %p') %></span></h4>
+
+          <% event.description.lines.each do |line| %>
+            <p><%= line %></p>
+          <% end %>
+
+        </div>
+
+        <div class="location">
+
+          <div class="map">
+            <a href="https://www.google.ca/maps/place/<%= event.address %>" target ="_blank">
+              <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= event.address %>&zoom=15&size=170x150&maptype=roadmap&markers=<%= event.address %>" />
+            </a>
+          </div>
+
+          <div class="address">
+            <%= event.address %><br />
+            <%= event.instructions %><br />
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="control"></div>
+
+        <div class="rsvp"></div>
+
+        <div class="clearfix"></div>
+
+      </div>
+
+      <div class="bottom">
+        <div class="others"></div>
+        <div class="host"></div>
+        <div class="clearfix"></div>
+      </div>
+
+    </div>
+
+  <% end %>
+
+<% end %>
