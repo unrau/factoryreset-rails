@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'events#index'
 
+  get 'new' => 'events#new'
   get 'old' => 'events#old'
   get 'signup' => 'users#new'
 

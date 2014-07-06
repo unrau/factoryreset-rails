@@ -11,7 +11,7 @@
 <div id="container">
 
   <div id="header">
-    <a href="./events/new"><div class="button-big header-button">Create Event</div></a>
+    <%= link_to 'Create Event', new_event_path, class: 'button-big header-button' %>
   </div>
 
   <div class="welcome">
@@ -27,6 +27,8 @@
     <h4>>> Factory Reset is a small gaming group in Vancouver BC</h4>
     <h4>>> This website is created and owned by <a href="http://www.chloeunrau.com" target="_blank">Chloe Unrau</a>.</h4>
   </div>
+
+  <%= debug(params) if Rails.env.development? %>
 
 </div> <!-- container -->
 </body>

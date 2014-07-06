@@ -17,14 +17,14 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.username %></td>
-        <td><%= user.email %></td>
-        <td><%= user.telephone %></td>
-        <td><%= user.colour %></td>
-        <td><%= user.picture %></td>
+        <td><span style='color: <%= user.colour %>'><%= user.username %></span></td>
+        <td><span style='color: <%= user.colour %>'><%= user.email %></span></td>
+        <td><span style='color: <%= user.colour %>'><%= user.telephone %></span></td>
+        <td><span style='color: <%= user.colour %>'>&nbsp;&nbsp;&nbsp;&#8226;</span></td>
+        <td><img src="<%= user.picture %>" /></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path, class: 'button-wee' %>

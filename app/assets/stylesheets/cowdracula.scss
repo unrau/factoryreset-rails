@@ -172,6 +172,16 @@ textarea {
 
 // Misc Classes
 
+.debug_dump {
+  position: relative;
+  margin-top: 40px;
+  width: 620px;
+  padding: 20px 10px 20px 10px;
+  border-radius: 4px;
+  background-color: $orangered;
+  color: $grey30;
+}
+
 .clearfix {
   clear: both;
 }
@@ -236,14 +246,16 @@ textarea {
   text-align: center;
   font-size: 26px;
   font-weight: bold;
-  color: #dedede;
+  color: $grey0;
   padding-top: 17px;
 }
 .button-big:hover {
   background-position: center;
+  color: $grey0;
 }
 .button-big:active {
   background-position: bottom;
+  color: $grey5;
 }
 .button-big:focus {
   color: $grey10;

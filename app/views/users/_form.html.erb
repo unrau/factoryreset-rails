@@ -4,19 +4,27 @@
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :email, 'Email Address' %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :telephone %><br>
+    <%= f.label :telephone, 'Phone Number (ex. 123.456.7890)' %><br>
     <%= f.text_field :telephone %>
   </div>
   <div class="field">
-    <%= f.label :colour %><br>
+    <%= f.label :colour, 'Hex Colour (ex. #ffffff)' %><br>
     <%= f.text_field :colour %>
   </div>
   <div class="field">
-    <%= f.label :picture %><br>
+    <%= f.label :picture, 'Pixel-Me Image URL' %><br>
     <%= f.text_field :picture %>
   </div>
   <div class="actions">

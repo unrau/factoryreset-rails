@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-  before_save { self.username = username.downcase }
+  before_save { self.username = username.downcase.gsub(/\s+/, '_') }
   before_save { self.email = email.downcase }
 
   validates :username, presence: true,
                        uniqueness: true
+  # Allow only a valid email address
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX },
@@ -15,4 +16,6 @@ class User < ActiveRecord::Base
                       uniqueness: true
 
   has_secure_password
+
+  scope :all_by_name, ->{ all.order(:username) }
 end
