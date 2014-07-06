@@ -194,6 +194,8 @@ textarea {
   padding: 5px 10px 5px 10px;
   background-color: $gold;
   color: $darkorangered !important;
+  font-family: $pixel-font;
+  font-size: 18px;
   @include button-shadow-nh;
 }
 .button-wee:hover {

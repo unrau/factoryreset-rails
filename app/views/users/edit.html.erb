@@ -1,8 +1,15 @@
 <div class="welcome lastwelcome">
-  <h4>>> edit user(<a href="#">user</a>) | or (<a href="../">go back</a>)</h4>
+  <h4>>> edit user(<a href="#"><%= @user.username %></a>) | or (<a href="../<%= @user.id %>/">go back</a>)</h4>
 </div>
 
-<%= render 'form' %>
+<% if @user.errors.any? %>
+    <div class="welcome errors">
+      <h4>>> <%= pluralize(@user.errors.count, 'error') %> with your request:</h4>
+      <h4>>> </h4>
+      <% @user.errors.full_messages.each do |msg| %>
+          <h4>>> <%= msg %></h4>
+      <% end %>
+    </div>
+<% end %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= render 'form' %>

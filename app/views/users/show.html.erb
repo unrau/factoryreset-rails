@@ -1,31 +1,30 @@
 <div class="welcome lastwelcome">
-  <h4>>> show_all(users) | link(<a href="../">go back</a>)</h4>
+  <h4>>> show_user(<%= @user.username %>) | link(<%= link_to 'go back', root_path %>)</h4>
 </div>
 
 <p>
   <strong>Username:</strong>
-  <%= @user.username %>
+  <span style="color: <%= @user.colour %>"><%= @user.username %></span>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
+  <span style="color: <%= @user.colour %>"><%= @user.email %></span>
 </p>
 
 <p>
   <strong>Telephone:</strong>
-  <%= @user.telephone %>
+  <span style="color: <%= @user.colour %>"><%= @user.telephone %></span>
 </p>
 
 <p>
   <strong>Colour:</strong>
-  <%= @user.colour %>
+  <span style="color: <%= @user.colour %>"><%= @user.colour %></span>
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= @user.picture %>
+  <strong>Picture:</strong><br />
+  <img src="<%= @user.picture %>" />
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit User', edit_user_path(@user), class: 'button-wee' %>

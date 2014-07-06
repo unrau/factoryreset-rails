@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :game_title, presence: true
   validates :session_title, presence: true
