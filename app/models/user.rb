@@ -14,4 +14,5 @@ class User < ActiveRecord::Base
   validates :picture, presence: true,
                       uniqueness: true
 
+  has_secure_password
 end
