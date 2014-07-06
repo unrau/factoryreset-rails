@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  has_many :comments
 
   validates :game_title, presence: true
   validates :session_title, presence: true

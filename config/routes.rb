@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'session/new'
-
-  get 'session/create'
-
-  get 'session/destroy'
-
   resources :users
-  resources :events
+  resources :events do
+    resources :comments
+  end
 
   root 'events#index'
 

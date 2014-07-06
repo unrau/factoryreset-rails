@@ -59,4 +59,28 @@
     <div class="clearfix"></div>
   </div>
 
+  <div class="comments">
+    <div class="all-comments">
+      <% event.comments.each do |comment| %>
+        <div class="comment">
+          >> <%= comment.commenter %> => <%= comment.body %>
+          <span class="delete">
+            <%= link_to 'x', [comment.event, comment],
+                        method: :delete,
+                        data: { confirm: 'Delete this comment? This cannot be undone' } %>
+          </span>
+        </div>
+      <% end %>
+    </div>
+    <div class="new-comment">
+      <%= form_for([event, event.comments.build]) do |f| %>
+        <div class="comment-label">>> name =></div>
+        <div class="comment-field"><%= f.text_field :commenter %></div>
+        <div class="comment-label">>> comment =></div>
+        <div class="comment-field"><%= f.text_field :body %></div>
+        <div class="comment-button"><%= f.submit(value:'press enter to send',class:'button-comment')%></div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
