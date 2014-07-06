@@ -49,7 +49,11 @@ $pixel-font: 'VT323', monospace;
 
 $hacker-font: 'PT Monoo', monospace;
 
-// Vars: Shadows
+// Vars: Others
+
+$event-border: 2px solid $grey0;
+
+// Mixins: Shadows
 
 @mixin box-shadow {
   -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .65);
@@ -66,10 +70,6 @@ $hacker-font: 'PT Monoo', monospace;
   -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,.65);
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.65);
 }
-
-// Vars: Others
-
-$event-border: 2px solid $grey0;
 
 
 
@@ -180,6 +180,11 @@ textarea {
   color: $hackergreen;
 }
 .lastwelcome {
+  margin-bottom: 40px;
+}
+
+.errors {
+  color: $orangered;
   margin-bottom: 40px;
 }
 

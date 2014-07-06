@@ -1,5 +1,15 @@
 <div class="welcome lastwelcome">
-  <h4>>> create a new event</h4>
+  <h4>>> create_new(event) | or <a href="../">go back</a></h4>
 </div>
+
+<% if @event.errors.any? %>
+    <div class="welcome errors">
+        <h4>>> <%= pluralize(@event.errors.count, 'error') %> with your request:</h4>
+        <h4>>> </h4>
+        <% @event.errors.full_messages.each do |msg| %>
+            <h4>>> <%= msg %></h4>
+        <% end %>
+    </div>
+<% end %>
 
 <%= render 'form' %>
