@@ -1,0 +1,9 @@
+<% if @user.errors.any? %>
+  <div class="welcome errors">
+    <h4>>> <%= pluralize(@user.errors.count, 'error') %> with your request:</h4>
+    <h4>>> </h4>
+    <% @user.errors.full_messages.each do |msg| %>
+      <h4>>> <%= msg %></h4>
+    <% end %>
+  </div>
+<% end %>

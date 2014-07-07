@@ -2,6 +2,12 @@
   <h4>>> ai.message: "Please enter your credentials..."</h4>
 </div>
 
+<div class="welcome errors">
+  <% flash.each do |key, value| %>
+    <h4>>> <%= value %></h4>
+  <% end %>
+</div>
+
 <%= form_for(:session, url: sessions_path) do |f| %>
 
   <div class="field">

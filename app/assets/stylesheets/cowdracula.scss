@@ -12,13 +12,14 @@
 
 
 // Vars: Colours
+
 $white: #ffffff;
+$beige: #f0ede5;
+$hackergreen: #72ee7b;
 $yellow: #faf21b;
 $gold: #b7ba58;
 $midgold: #a9ac50;
 $darkgold: #989b45;
-$beige: #f0ede5;
-$hackergreen: #72ee7b;
 $orangered: #ff6762;
 $darkorangered: #c53a3a;
 
@@ -39,6 +40,7 @@ $glinkh: $white;
 $glinka: $white;
 
 // Vars: Images
+
 $headerimg: url('header.png');
 $headertile: url('header-bg.png');
 $buttonsmall: url('small-button.png');
@@ -47,7 +49,6 @@ $buttonbig: url('header-button.png');
 // Vars: Fonts
 
 $pixel-font: 'VT323', monospace;
-
 $hacker-font: 'PT Monoo', monospace;
 
 // Vars: Others
@@ -112,7 +113,7 @@ label {
 }
 
 input, textarea {
-  width: 100%;
+  width: 628px;
   max-width: 100%;
   min-height: 26px;
   margin: 5px 0 8px 0;

@@ -1,6 +1,8 @@
 <div class="welcome lastwelcome">
   <h4>>> show_user(<%= @user.username %>) | link(<%= link_to 'go back', root_path %>)</h4>
-  <h4>>> <%= notice %></h4>
+  <% if notice %>
+    <h4>>> <%= notice %></h4>
+  <% end %>
 </div>
 
 <p>
@@ -28,4 +30,4 @@
   <img src="<%= @user.picture %>" class="pixel-me"/>
 </p>
 
-<%= link_to 'Edit User', edit_user_path(@user), class: 'button-wee' %>
+<%= link_to 'Edit Profile', edit_user_path(@user), class: 'button-wee' %>

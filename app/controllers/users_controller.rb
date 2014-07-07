@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  # un-comment this skip_before_filter to allow creation of the first user
+  # skip_before_filter :require_login
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
