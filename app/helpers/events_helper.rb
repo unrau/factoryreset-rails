@@ -2,8 +2,8 @@ module EventsHelper
 
   def get_random_message
     messages = [
-        'Hello',
-        'Hi there',
+        'Hello.',
+        'Hi there.',
         'Please don\'t tell the others, but... you are my favourite <3',
         'Oh... it\'s you...',
         'Shall I teleport you to the nexus?',

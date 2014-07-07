@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   resources :events do
     resources :comments
   end
 
   root 'events#index'
 
-  get 'new' => 'events#new'
-  get 'old' => 'events#old'
-  get 'signup' => 'users#new'
+  get '/new' => 'events#new'
+  get '/old' => 'events#old'
+  get '/signup' => 'users#new'
+  get '/login' => 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: 'delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

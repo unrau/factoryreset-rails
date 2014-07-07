@@ -11,11 +11,20 @@
 <div id="container">
 
   <div id="header">
-    <%= link_to 'Create Event', new_event_path, class: 'button-big header-button' %>
+    <% if signed_in? %>
+      <%= link_to 'Create Event', new_event_path, class: 'button-big header-button' %>
+    <% else %>
+      <%= link_to 'Log In', new_session_path, class: 'button-big header-button' %>
+    <% end %>
   </div>
 
   <div class="welcome">
-    <h4>>> user recognized: (<a href="#">user</a>) (<a href="#">log out</a>)</h4>
+    <% if signed_in? %>
+      <h4>>> user recognized: (<%= link_to "#{current_user.username}", current_user %>)
+          (<%= link_to 'log out', logout_path, method: 'delete' %>)</h4>
+    <% else %>
+      <h4>>> user not recognized ! please log in</h4>
+    <% end %>
   </div>
 
   <div id="content">
