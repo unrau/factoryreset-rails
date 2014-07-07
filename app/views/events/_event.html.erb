@@ -6,7 +6,7 @@
     <div class="clearfix"></div>
   </div>
 
-  <!-- TODO: replace this image validation with a proper one inside the event model -->
+  <!-- Only show an event image if it exists and ends with an image extension -->
   <% if event.event_image && event.event_image.ends_with?('jpg', 'jpeg', 'gif', 'png') %>
       <div class="image"><img src="<%= event.event_image %>" /></div>
   <% end %>

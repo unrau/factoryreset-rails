@@ -1,5 +1,5 @@
 <div class="welcome lastwelcome">
-  <h4>>> create_new(user) | or (<a href="../">go back</a>)</h4>
+  <h4>>> create_new(user) | or (<%= link_to 'go back', root_path %>)</h4>
 </div>
 
 <% if @user.errors.any? %>

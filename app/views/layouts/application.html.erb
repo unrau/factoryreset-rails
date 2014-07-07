@@ -13,8 +13,6 @@
   <div id="header">
     <% if signed_in? %>
       <%= link_to 'Create Event', new_event_path, class: 'button-big header-button' %>
-    <% else %>
-      <%= link_to 'Log In', new_session_path, class: 'button-big header-button' %>
     <% end %>
   </div>
 
@@ -23,7 +21,7 @@
       <h4>>> user recognized: (<%= link_to "#{current_user.username}", current_user %>)
           (<%= link_to 'log out', logout_path, method: 'delete' %>)</h4>
     <% else %>
-      <h4>>> user not recognized ! please log in</h4>
+      <h4>>> user not recognized!</h4>
     <% end %>
   </div>
 
@@ -33,10 +31,11 @@
   </div>
 
   <div id="footer">
-    <h4>>> Factory Reset is a small gaming group in Vancouver BC</h4>
+    <h4>>> Factory Reset is a private gaming group in Vancouver BC</h4>
     <h4>>> This website is created and owned by <a href="http://www.chloeunrau.com" target="_blank">Chloe Unrau</a>.</h4>
   </div>
 
+  <!-- Shows debug info in the Rails Dev-Env -->
   <%= debug(params) if Rails.env.development? %>
 
 </div> <!-- container -->
