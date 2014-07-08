@@ -322,6 +322,7 @@ img.pixel-me {
     height: 154px;
     background-color: $grey40;
     border-bottom: $event-border;
+    overflow: hidden;
 
     img {
       width: 640px;
