@@ -229,7 +229,7 @@ img.pixel-me {
   width: 150px;
   height: 45px;
   background: $buttonsmall top;
-  color: $grey40;
+  color: $grey40 !important;
   cursor: pointer;
   outline: none;
   font-family: $pixel-font;
@@ -241,9 +241,6 @@ img.pixel-me {
 .button-small:active {
   background-position: bottom;
 }
-.button-small:focus {
-  color: $gold;
-}
 
 .button-big {
   width: 213px;
@@ -253,33 +250,27 @@ img.pixel-me {
   text-align: center;
   font-size: 26px;
   font-weight: bold;
-  color: $grey0;
+  color: $grey0 !important;
   padding-top: 17px;
 
   a, a:link {
-    color: $grey0;
+    color: $grey0 !important;
     padding: 8px 75px;
   }
   a:hover {
-    color: $grey0;
+    color: $grey0 !important;
   }
   a:active {
-    color: $grey5;
-  }
-  a:focus {
-    color: $grey10;
+    color: $grey5 !important;
   }
 }
 .button-big:hover {
   background-position: center;
-  color: $grey0;
+  color: $grey0 !important;
 }
 .button-big:active {
   background-position: bottom;
-  color: $grey5;
-}
-.button-big:focus {
-  color: $grey10;
+  color: $grey5 !important;
 }
 
 .button-big-green {
