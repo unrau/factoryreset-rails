@@ -4,4 +4,6 @@
 
 <%= render 'errors' %>
 
-<%= render 'form' %>
+<% if @user == current_user %>
+  <%= render 'form' %>
+<% end %>

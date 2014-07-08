@@ -23,8 +23,10 @@
         <td><span style='color: <%= user.colour %>'>&nbsp;&nbsp;&nbsp;&#8226;</span></td>
         <td><img src="<%= user.picture %>" class="pixel-me"></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user == current_user %>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
