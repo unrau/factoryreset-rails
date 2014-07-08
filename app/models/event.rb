@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
+  belongs_to :host, class_name: 'User'
+  has_many :rsvps, dependent: :destroy
+  has_many :users, through: :rsvps
   has_many :comments, dependent: :destroy
 
   validates :game_title, presence: true

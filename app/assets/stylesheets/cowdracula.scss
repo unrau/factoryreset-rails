@@ -45,6 +45,7 @@ $headerimg: url('header.png');
 $headertile: url('header-bg.png');
 $buttonsmall: url('small-button.png');
 $buttonbig: url('header-button.png');
+$buttonbiggreen: url('header-button-green.png');
 
 // Vars: Fonts
 
@@ -254,6 +255,20 @@ img.pixel-me {
   font-weight: bold;
   color: $grey0;
   padding-top: 17px;
+
+  a, a:link {
+    color: $grey0;
+    padding: 8px 75px;
+  }
+  a:hover {
+    color: $grey0;
+  }
+  a:active {
+    color: $grey5;
+  }
+  a:focus {
+    color: $grey10;
+  }
 }
 .button-big:hover {
   background-position: center;
@@ -265,6 +280,10 @@ img.pixel-me {
 }
 .button-big:focus {
   color: $grey10;
+}
+
+.button-big-green {
+  background: $buttonbiggreen top;
 }
 
 .header-button {
@@ -353,7 +372,7 @@ img.pixel-me {
 
     .control {
       float: left;
-      margin-top: 30px;
+      margin: 30px 0 20px 0;
     }
 
     .rsvp {
@@ -369,14 +388,22 @@ img.pixel-me {
     border-bottom: $event-border;
 
     .attendees {
+      width: 542px;
       float: left;
+      text-align: right;
+      padding-right: 20px;
     }
 
     .host {
+      position: relative;
       width: 78px;
       height: 100%;
       background-color: $grey0;
       float: right;
+    }
+
+    .is-host {
+      background-color: $gold;
     }
   }
 

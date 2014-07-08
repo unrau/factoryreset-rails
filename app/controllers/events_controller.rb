@@ -14,7 +14,9 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.host = current_user
     if @event.save
+      @event.rsvps.create(user: current_user)
       redirect_to root_path
     else
       render 'new'
@@ -38,7 +40,7 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:game_title, :session_title, :event_image, :date_time, :address, :instructions, :description)
+      params.require(:event).permit(:game_title, :session_title, :event_image, :date_time, :address_title, :address, :instructions, :description)
     end
 
 end
