@@ -112,8 +112,8 @@
     <div class="new-comment">
       <%= form_for([event, event.comments.build]) do |f| %>
         <div class="comment-label">>> comment =></div>
-        <div class="comment-field"><%= f.text_field :body %></div>
-        <div class="comment-button"><%= f.submit(value:'press enter to send',class:'button-comment')%></div>
+        <div class="comment-field"><%= f.text_field :body, style:"color: #{current_user.colour}" %></div>
+        <div class="comment-button"><%= f.submit(value:'press enter to send', class:'button-comment')%></div>
       <% end %>
     </div>
   </div>
