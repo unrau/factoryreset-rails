@@ -11,6 +11,6 @@ class Event < ActiveRecord::Base
   scope :upcoming, -> { all.where('date_time >= ?', Date.today).order(:date_time) }
 
   # Order past events by descending
-  scope :past, -> { all.where('date_time > ?', Date.today).order('date_time DESC') }
+  scope :past, -> { all.where('date_time < ?', Date.today).order('date_time DESC') }
 
 end
