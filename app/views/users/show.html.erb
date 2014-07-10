@@ -30,6 +30,6 @@
   <img src="<%= @user.picture %>" class="pixel-me"/>
 </p>
 
-<% if @user == current_user %>
+<% if @user == current_user or current_user.id == 1 %>
   <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button-wee' %>
 <% end %>
