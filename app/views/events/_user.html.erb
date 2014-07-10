@@ -1,0 +1,18 @@
+<table class="users-table">
+
+  <% @users.each do |user| %>
+
+    <tr>
+      <td>
+        <img src="<%= user.picture %>" />
+      </td>
+      <td>
+        <p><strong><%= link_to "#{user.username}", user_path(user), :style => "color:#{user.colour}" %></strong></p>
+        <p><a href="mailto:<%= user.email %>" style="color:<%= user.colour %>"><%= user.email %></a></p>
+        <p><%= user.telephone %></p>
+      </td>
+    </tr>
+
+  <% end %>
+
+</table>

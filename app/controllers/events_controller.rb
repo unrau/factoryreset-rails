@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.upcoming
+    @users = User.all_by_name
   end
 
   def old
