@@ -13,7 +13,4 @@ class Event < ActiveRecord::Base
   # Order past events by descending
   scope :past, -> { all.where('date_time < ?', Date.today).order(date_time: :desc) }
 
-  # Order all by ascending
-  scope :ascending, -> {all.order(created_at: :asc)}
-
 end
