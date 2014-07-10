@@ -8,9 +8,12 @@ class Event < ActiveRecord::Base
   validates :session_title, presence: true
 
   # Order upcoming events by ascending
-  scope :upcoming, -> { all.where('date_time >= ?', Date.today).order(:date_time) }
+  scope :upcoming, -> { all.where('date_time >= ?', Date.today).order(date_time: :asc) }
 
   # Order past events by descending
-  scope :past, -> { all.where('date_time < ?', Date.today).order('date_time DESC') }
+  scope :past, -> { all.where('date_time < ?', Date.today).order(date_time: :desc) }
+
+  # Order all by ascending
+  scope :ascending, -> {all.order(created_at: :asc)}
 
 end
