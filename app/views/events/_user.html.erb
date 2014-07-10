@@ -2,16 +2,7 @@
 
   <% @users.each do |user| %>
 
-    <tr>
-      <td>
-        <%= link_to image_tag(user.picture), user_path(user) %>
-      </td>
-      <td>
-        <p><strong><%= link_to "#{user.username}", user_path(user), :style => "color:#{user.colour}" %></strong></p>
-        <p><a href="mailto:<%= user.email %>" style="color:<%= user.colour %>"><%= user.email %></a></p>
-        <p><%= user.telephone %></p>
-      </td>
-    </tr>
+    <%= link_to image_tag(user.picture), user_path(user) %>
 
   <% end %>
 
