@@ -1,0 +1,13 @@
+<%= render 'header' %>
+
+<p>
+  <strong style="color: <%= @user.colour %>; background-color: #4c4c4c;">
+    &nbsp;<%= @user.username %>
+  </strong>
+  &nbsp;has un-RSVPd from your event:</p>
+
+<h3><%= @event.session_title %></h3>
+
+<p>Go here to view the event: <%= @url %></p>
+
+<%= render 'footer' %>

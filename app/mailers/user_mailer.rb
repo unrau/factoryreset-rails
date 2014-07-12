@@ -55,11 +55,25 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "You have RSVPd to #{@event.session_title}")
   end
 
+  def rsvp_confirm_host(user, event)
+    @user = user
+    @event = event
+    @url = 'http://www.factory-reset.net'
+    mail(to: @event.host.email, subject: "#{@user.username} has RSVPd to your event #{@event.session_title}")
+  end
+
   def rsvp_remove(user, event)
     @user = user
     @event = event
     @url = 'http://www.factory-reset.net'
     mail(to: @user.email, subject: "You have un-RSVPd from #{@event.session_title}")
+  end
+
+  def rsvp_remove_host(user, event)
+    @user = user
+    @event = event
+    @url = 'http://www.factory-reset.net'
+    mail(to: @event.host.email, subject: "#{@user.username} has un-RSVPd from your event #{@event.session_title}")
   end
 
 end
