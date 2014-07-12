@@ -1,0 +1,19 @@
+<%= render 'header' %>
+
+<% if @user.email != @event.host.email %>
+    <p>
+      <strong style="color: <%= @event.host.colour %>; background-color: #4c4c4c;">
+        &nbsp;<%= @event.host.username %>
+      </strong>
+      &nbsp;has cancelled this event:
+    </p>
+<% else %>
+    <p>
+      You have cancelled this event:
+    </p>
+<% end %>
+
+<h3><%= @event.session_title %></h3>
+
+
+<%= render 'footer' %>

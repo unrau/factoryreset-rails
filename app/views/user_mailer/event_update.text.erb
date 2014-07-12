@@ -1,0 +1,17 @@
+<%= @user.username %>, pupugi deigns to inform you...
+=====================================================
+
+<% if @user.email != @event.host.email %>
+    <%= @event.host.username %> has updated the event:
+<% else %>
+    You have updated the event:
+<% end %>
+
+<%= @event.session_title %>
+Date: <%= @event.date_time.strftime('%a %e %b %Y') %>
+Time: <%= @event.date_time.strftime('%l:%M %p') %>
+Location: <%= @event.address_title %>
+Description: <%= @event.description %>
+
+
+Go here to view this event: <%= @url %>

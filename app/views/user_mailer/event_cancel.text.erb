@@ -1,0 +1,10 @@
+<%= @user.username %>, pupugi deigns to inform you...
+=====================================================
+
+<% if @user.email != @event.host.email %>
+    <%= @event.host.username %> has cancelled the event:
+<% else %>
+    You have cancelled the event:
+<% end %>
+
+<%= @event.session_title %>

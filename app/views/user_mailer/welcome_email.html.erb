@@ -1,12 +1,13 @@
 <%= render 'header' %>
 
 <p>You have successfully signed up for the greatest, most coolest gaming group in these here parts.</p>
+
 <p>
     Your username is: <strong><%= @user.username %></strong><br />
     Your email address is: <strong><%= @user.email %></strong><br />
     Your phone number is: <strong><%= @user.telephone %></strong>
 </p>
-<p>To login to the site, just follow this link: <%= @url %>.</p>
-<p>Don't forget to check in every day for new comments and events!</p>
+
+<p>To login to the site, just follow this link: <%= @url %></p>
 
 <%= render 'footer' %>

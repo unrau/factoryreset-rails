@@ -1,0 +1,25 @@
+<%= render 'header' %>
+
+<% if @user.email != @event.host.email %>
+    <p>
+      <strong style="color: <%= @event.host.colour %>; background-color: #4c4c4c;">
+        &nbsp;<%= @event.host.username %>
+      </strong>
+      &nbsp;has updated this event:
+    </p>
+<% else %>
+    <p>
+      You have updated this event:
+    </p>
+<% end %>
+
+<h3><%= @event.session_title %></h3>
+<p><small>Date:</small> <strong><%= @event.date_time.strftime('%a %e %b %Y') %></strong></p>
+<p><small>Time:</small> <strong><%= @event.date_time.strftime('%l:%M %p') %></strong></p>
+<p><small>Location:</small> <strong><%= @event.address_title %></strong></p>
+<p><small>Description:</small> <strong><%= @event.description %></strong></p>
+
+<p>Go here to view this event: <%= @url %></p>
+
+
+<%= render 'footer' %>

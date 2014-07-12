@@ -1,0 +1,28 @@
+<%= render 'header' %>
+
+<% if @user.email != @event.host.email %>
+  <p>
+    <strong style="color: <%= @event.host.colour %>; background-color: #4c4c4c;">
+      &nbsp;<%= @event.host.username %>
+    </strong>
+    &nbsp;has created a new event for <strong><%= @event.game_title %></strong>:
+  </p>
+<% else %>
+  <p>
+    You have created a new event for <strong><%= @event.game_title %></strong>:
+  </p>
+<% end %>
+
+<h3><%= @event.session_title %></h3>
+<p><small>Date:</small> <strong><%= @event.date_time.strftime('%a %e %b %Y') %></strong></p>
+<p><small>Time:</small> <strong><%= @event.date_time.strftime('%l:%M %p') %></strong></p>
+<p><small>Location:</small> <strong><%= @event.address_title %></strong></p>
+<p><small>Description:</small> <strong><%= @event.description %></strong></p>
+
+<% if @user.email != @event.host.email %>
+  <p>RSVP to get updates and comment notifications for this event: <%= @url %></p>
+<% else %>
+  You have automatically been RSVPd to this event: <%= @url %>
+<% end %>
+
+<%= render 'footer' %>

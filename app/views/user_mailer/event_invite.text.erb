@@ -1,0 +1,20 @@
+<%= @user.username %>, pupugi deigns to inform you...
+=====================================================
+
+<% if @user.email != @event.host.email %>
+  <%= @event.host.username %> has created a new event for <%= @event.game_title %>:
+<% else %>
+  You have created a new event for <%= @event.game_title %>:
+<% end %>
+
+<%= @event.session_title %>
+Date: <%= @event.date_time.strftime('%a %e %b %Y') %>
+Time: <%= @event.date_time.strftime('%l:%M %p') %>
+Location: <%= @event.address_title %>
+Description: <%= @event.description %>
+
+<% if @user.email != @event.host.email %>
+  RSVP to get updates and comment notifications for this event: <%= @url %>
+<% else %>
+  You have automatically been RSVPd to this event: <%= @url %>
+<% end %>
