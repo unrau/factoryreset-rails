@@ -46,6 +46,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Environment Variables to protect sensitive information from being viewed on GitHub
 gem 'figaro', '~> 0.7.0'
 
+# Integrate with Heroku's Temporize Scheduler
+gem 'httparty', '~> 0.13.1'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
