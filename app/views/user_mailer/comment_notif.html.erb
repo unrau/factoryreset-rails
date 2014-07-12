@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+      <link href='https://fonts.googleapis.com/css?family=PT+Mono|VT323' rel='stylesheet' type='text/css'>
+      <style>
+          body {
+              font-family: 'PT Mono', monospace;
+          }
+          h1 {
+              font-family: 'VT323', serif;
+              font-size: 20px;
+              color: #f44c4c;
+          }
+          h2 {
+              font-family: 'VT323', serif;
+              font-size: 20px;
+              color: #5ad012;
+          }
+          p {
+              font-size: 18px;
+          }
+      </style>
+    </head>
+    <body>
+        <img src="http://www.chloeunrau.com/images/facset/pupugichan.png" width="600px" height="305px"/>
+        <h1><%= @user.username %>,</h1>
+        <h2>pupugi deigns to inform you...</h2>
+        <p>
+          <strong style="color: <%= @commenter.colour %>; background-color: #4c4c4c;">
+            &nbsp;<%= @commenter.username %>
+          </strong>
+         &nbsp;has said this about <%= @event.session_title %> (<%= @event.game_title %>):
+        </p>
+        <p><strong><%= @comment.body %></strong></p>
+        <p>Go here to reply: <%= @url %>.</p>
+    </body>
+</html>

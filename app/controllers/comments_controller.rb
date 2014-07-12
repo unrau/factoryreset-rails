@@ -4,7 +4,13 @@ class CommentsController < ApplicationController
     @comment = @event.comments.new(comment_params)
 
     @comment.user = current_user
-    @comment.save!
+
+    if @comment.save
+      @event.rsvps.each do |rsvp|
+        # Only send a comment notification to RSVPd users who did not create the comment
+        UserMailer.comment_notif(rsvp.user, @comment).deliver if rsvp.user != @comment.user
+      end
+    end
 
     redirect_to root_path
   end
