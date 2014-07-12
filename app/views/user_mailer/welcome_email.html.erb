@@ -1,38 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-        <link href='https://fonts.googleapis.com/css?family=PT+Mono|VT323' rel='stylesheet' type='text/css'>
-        <style>
-        body {
-            font-family: 'PT Mono', monospace;
-        }
-        h1 {
-            font-family: 'VT323', serif;
-            font-size: 20px;
-            color: #f44c4c;
-        }
-        h2 {
-            font-family: 'VT323', serif;
-            font-size: 20px;
-            color: #5ad012;
-        }
-        p {
-            font-size: 18px;
-        }
-        </style>
-    </head>
-    <body>
-        <img src="http://www.chloeunrau.com/images/facset/pupugichan.png" width="600px" width="305px"/>
-        <h1><%= @user.username %>,</h1>
-        <h2>pupugi deigns to inform you...</h2>
-        <p>You have successfully signed up for the greatest, most coolest gaming group in these here parts.</p>
-        <p>
-            Your username is: <strong><%= @user.username %></strong><br />
-            Your email address is: <strong><%= @user.email %></strong><br />
-            Your phone number is: <strong><%= @user.telephone %></strong>
-        </p>
-        <p>To login to the site, just follow this link: <%= @url %>.</p>
-        <p>Don't forget to check in every day for new comments and events!</p>
-    </body>
-</html>
+<%= render 'header' %>
+
+<p>You have successfully signed up for the greatest, most coolest gaming group in these here parts.</p>
+<p>
+    Your username is: <strong><%= @user.username %></strong><br />
+    Your email address is: <strong><%= @user.email %></strong><br />
+    Your phone number is: <strong><%= @user.telephone %></strong>
+</p>
+<p>To login to the site, just follow this link: <%= @url %>.</p>
+<p>Don't forget to check in every day for new comments and events!</p>
+
+<%= render 'footer' %>
