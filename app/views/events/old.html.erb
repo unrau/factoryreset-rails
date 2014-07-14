@@ -14,7 +14,7 @@
 
       <!-- Only show an event image if it exists and ends with an image extension -->
       <% if event.event_image && event.event_image.ends_with?('jpg', 'jpeg', 'gif', 'png') %>
-          <div class="image"><img src="<%= event.event_image %>" /></div>
+        <div class="image"><img src="<%= event.event_image %>" /></div>
       <% end %>
 
       <div class="content">
@@ -23,7 +23,7 @@
           <h4><%= event.session_title %></h4>
           <h4>Stared at <span class="time"><%= event.date_time.strftime('%l:%M %p') %></span></h4>
           <% event.description.lines.each do |line| %>
-              <p><%= line %></p>
+            <p><%= line %></p>
           <% end %>
         </div>
 
@@ -48,9 +48,9 @@
 
         <div class="control">
           <% if event.host == current_user or current_user.id == 1 %>
-              <%= link_to 'Edit Event', edit_event_path(event), :class => 'button-wee' %>
-              <%= link_to 'Delete Event', event, method: :delete, data: {
-                      confirm: 'Delete this event? This cannot be undone.' }, :class => 'button-wee' %>
+            <%= link_to 'Edit Event', edit_event_path(event), :class => 'button-wee' %>
+            <%= link_to 'Delete Event', event, method: :delete, data: {
+                    confirm: 'Delete this event? This cannot be undone.' }, :class => 'button-wee' %>
           <% end %>
         </div>
 
@@ -65,24 +65,24 @@
 
         <div class="attendees">
           <% event.rsvps.each do |rsvp| %>
-              <% unless event.host == rsvp.user %>
-                  <img src="<%= rsvp.user.picture %>" />
-              <% end %>
+            <% unless event.host == rsvp.user %>
+              <%= link_to (image_tag(rsvp.user.picture)), user_path(rsvp.user) %>
+            <% end %>
           <% end %>
         </div>
 
         <% if event.host == current_user %>
-            <div class="host is-host">
-              <% if event.rsvps.where(user_id: event.host.id).count > 0 %>
-                  <img src="<%= event.host.picture %>" />
-              <% end %>
+          <div class="host is-host">
+            <% if event.rsvps.where(user_id: event.host.id).count > 0 %>
+              <%= link_to (image_tag(event.host.picture)), user_path(event.host) %>
+            <% end %>
             </div>
         <% else %>
-            <div class="host">
-              <% if event.rsvps.where(user_id: event.host.id).count > 0 %>
-                  <img src="<%= event.host.picture %>" />
-              <% end %>
-            </div>
+          <div class="host">
+            <% if event.rsvps.where(user_id: event.host.id).count > 0 %>
+              <%= link_to (image_tag(event.host.picture)), user_path(event.host) %>
+            <% end %>
+          </div>
         <% end %>
 
         <div class="clearfix"></div>
@@ -92,16 +92,16 @@
       <div class="comments">
         <div class="all-comments">
           <% event.comments.each do |comment| %>
-              <div class="comment" style="color: <%= comment.user.colour %>;">
-                >> <%= comment.user.username %> => <%= comment.body %>
-                <% if current_user.id == 1 %>
-                  <span class="delete">
-                    <%= link_to 'x', [comment.event, comment],
-                                method: :delete,
-                                data: { confirm: 'Delete this comment? This cannot be undone' } %>
-                  </span>
-                <% end %>
-              </div>
+            <div class="comment" style="color: <%= comment.user.colour %>;">
+              >> <%= comment.user.username %> => <%= comment.body %>
+              <% if current_user.id == 1 %>
+                <span class="delete">
+                  <%= link_to 'x', [comment.event, comment],
+                              method: :delete,
+                              data: { confirm: 'Delete this comment? This cannot be undone' } %>
+                </span>
+              <% end %>
+            </div>
           <% end %>
         </div>
         <br />
