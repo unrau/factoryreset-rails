@@ -1,0 +1,13 @@
+<%= render 'header' %>
+
+<p>The <strong><%= @event.game_title %></strong> event:</p>
+
+<h3><%= @event.session_title %></h3>
+
+<p>is in two days, on <strong><%= @event.date_time.strftime("%A, the #{@event.date_time.day.ordinalize} of %b, %Y") %></strong>,</p>
+
+<p>and starts at <%= @event.date_time.strftime('%l:%M %p') %>.</p>
+
+Go here to view the event: <%= @url %>
+
+<%= render 'footer' %>

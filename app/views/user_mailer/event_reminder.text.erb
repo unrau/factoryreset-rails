@@ -1,0 +1,12 @@
+<%= @user.username %>, pupugi deigns to inform you...
+=====================================================
+
+The <%= @event.game_title %> event:
+
+<%= @event.session_title %>
+
+is in two days, on <%= @event.date_time.strftime('%a %e %b %Y') %>,
+
+and starts at <%= @event.date_time.strftime('%l:%M %p') %>.
+
+Go here to view the event: <%= @url %>

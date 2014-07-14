@@ -76,4 +76,11 @@ class UserMailer < ActionMailer::Base
     mail(to: @event.host.email, subject: "#{@user.username} has un-RSVPd from your event #{@event.session_title}")
   end
 
+  def event_reminder(user, event)
+    @event = event
+    @user = user
+    @url = 'http://www.factory-reset.net'
+    mail(to: @user.email, subject: "Event Reminder: #{@event.game_title} is in on #{@event.date_time.strftime('%A')}")
+  end
+
 end
