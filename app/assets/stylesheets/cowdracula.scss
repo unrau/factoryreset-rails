@@ -318,6 +318,10 @@ img.pixel-me {
       padding-top: 6px;
       color: $orangered;
       font-size: 40px;
+
+      .old {
+        color: $grey10;
+      }
     }
 
     .game {
@@ -363,6 +367,10 @@ img.pixel-me {
 
       .time {
         color: $yellow;
+      }
+
+      .old {
+        color: $white !important;
       }
     }
 
