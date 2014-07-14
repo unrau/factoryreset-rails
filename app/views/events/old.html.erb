@@ -21,7 +21,7 @@
 
         <div class="description">
           <h4><%= event.session_title %></h4>
-          <h4>Stared at <span class="time old"><%= event.date_time.strftime('%l:%M %p') %></span></h4>
+          <h4>Started at <span class="time old"><%= event.date_time.strftime('%l:%M %p') %></span></h4>
           <% event.description.lines.each do |line| %>
             <p><%= line %></p>
           <% end %>
