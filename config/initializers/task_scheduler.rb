@@ -3,7 +3,7 @@ require 'rufus-scheduler'
 scheduler = Rufus::Scheduler.new
 
 # Send the digest every day at noon
-scheduler.cron('0 10 * * *') do
+scheduler.cron('0 3 * * *') do
   @events = Event.upcoming
   @events.each do |event|
     if Date.today.beginning_of_day + 2.days == event.date_time.beginning_of_day
