@@ -25,7 +25,7 @@
         <td><%= link_to 'Show', user %></td>
         <% if user == current_user or current_user.id == 1 %>
           <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'WARNING! Delete this user? This cannot be undone.' } %></td>
         <% end %>
       </tr>
     <% end %>

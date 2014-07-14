@@ -94,6 +94,13 @@
           <% event.comments.each do |comment| %>
               <div class="comment" style="color: <%= comment.user.colour %>;">
                 >> <%= comment.user.username %> => <%= comment.body %>
+                <% if current_user.id == 1 %>
+                  <span class="delete">
+                    <%= link_to 'x', [comment.event, comment],
+                                method: :delete,
+                                data: { confirm: 'Delete this comment? This cannot be undone' } %>
+                  </span>
+                <% end %>
               </div>
           <% end %>
         </div>
