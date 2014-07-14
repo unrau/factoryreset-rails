@@ -7,8 +7,27 @@
 <%= render @events %>
 
 <div class="welcome">
-  <h4>>> show_users(all)</h4>
+  <h4>>> user_resources(show)</h4>
+  <h4>>> </h4>
+  <h4>>> <a href="https://docs.google.com/folderview?id=0B7Ru8Rq7hTudaEktQTB0VjFhUXM" target="_blank">Second War Documents</a></h4>
+  <h4>>> <a href="http://charactersheets.minotaur.cc/" target="_blank">Pathfinder Character Sheets</a></h4>
+  <h4>>> <a href="http://minus.com/mdnd35" target="_blank">D&D 3.5e PDFs</a></h4>
+  <h4>>> <a href="http://www.w3schools.com/tags/ref_colorpicker.asp" target="_blank">HEX Colour Picker</a></h4>
+  <h4>>> <a href="http://imgur.com/" target="_blank">Free Image Hosting</a></h4>
   <h4>>> </h4>
 </div>
 
-<%= render 'user' %>
+<div class="welcome">
+  <h4>>> all_users(show)</h4>
+  <h4>>> </h4>
+</div>
+
+<div class="all-users">
+
+  <% @users.each do |user| %>
+
+      <%= link_to image_tag(user.picture), user_path(user) %>
+
+  <% end %>
+
+</div>
