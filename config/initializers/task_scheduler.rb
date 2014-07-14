@@ -13,3 +13,9 @@ scheduler.cron('0 10 * * *') do
     end
   end
 end
+
+# Prevent Heroku from idling the app by running a process every 59 minutes
+# Prevent Heroku from reporting downtime by running a process every 59 seconds
+scheduler.every('59m') do
+  puts "carry on my wayward son #{Random.rand(9999).to_s}"
+end
