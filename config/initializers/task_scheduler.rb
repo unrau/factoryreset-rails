@@ -8,7 +8,7 @@ scheduler = Rufus::Scheduler.new
 blowerio = RestClient::Resource.new(ENV['BLOWERIO_URL'])
 
 # Send reminder emails every day at 3:00am GMT (10:00 am PST)
-scheduler.cron('0 19 * * *') do
+scheduler.cron('15 13 * * *') do
   @events = Event.upcoming
   @events.each do |event|
     if Date.today.beginning_of_day + 2.days == event.date_time.beginning_of_day
