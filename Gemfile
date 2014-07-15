@@ -49,6 +49,9 @@ gem 'figaro', '~> 0.7.0'
 # Use Rufus Scheduler for sending scheduled emails
 gem 'rufus-scheduler'
 
+# Use Rest Client for the Blower.io Heroku addon (SMS)
+gem 'rest-client', '~> 1.7.2'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
