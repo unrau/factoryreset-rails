@@ -20,6 +20,7 @@ scheduler.cron('0 3 * * *') do
 end
 
 # Send reminder SMS messages every day at 5:00am GMT (12:00 noon PST)
+# TODO: Send this SMS 4 hours before the event, instead of at a set time.
 scheduler.cron('0 5 * * *') do
   @events = Event.upcoming
   @events.each do |event|
