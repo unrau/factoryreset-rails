@@ -52,6 +52,9 @@ gem 'rufus-scheduler'
 # Use Rest Client for the Blower.io Heroku addon (SMS)
 gem 'rest-client', '~> 1.7.2'
 
+# Use NewRelic to keep the Heroku app alive
+gem 'newrelic_rpm'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

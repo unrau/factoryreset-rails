@@ -8,7 +8,7 @@ scheduler = Rufus::Scheduler.new
 blowerio = RestClient::Resource.new(ENV['BLOWERIO_URL'])
 
 # Send reminder emails every day at 3:00am GMT (10:00 am PST)
-scheduler.cron('15 13 * * *') do
+scheduler.cron('0 19 * * *') do
   @events = Event.upcoming
   @events.each do |event|
     if Date.today.beginning_of_day + 2.days == event.date_time.beginning_of_day
@@ -30,10 +30,4 @@ scheduler.cron('0 19 * * *') do
       end
     end
   end
-end
-
-# Prevent Heroku from idling the app by running a process every 59 minutes
-# Prevent Heroku from reporting downtime by running a process every 59 seconds
-scheduler.every('59s') do
-  puts "carry on my wayward #{Random.rand(9999).to_s}"
 end
