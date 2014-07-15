@@ -2,7 +2,7 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler.new
 
-# Send the digest every day at noon
+# Send the digest every day 3:00am GMT
 scheduler.cron('0 3 * * *') do
   @events = Event.upcoming
   @events.each do |event|
@@ -17,5 +17,5 @@ end
 # Prevent Heroku from idling the app by running a process every 59 minutes
 # Prevent Heroku from reporting downtime by running a process every 59 seconds
 scheduler.every('59s') do
-  puts "carry on my wayward son #{Random.rand(9999).to_s}"
+  puts "carry on my wayward #{Random.rand(9999).to_s}"
 end
