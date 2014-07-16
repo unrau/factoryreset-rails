@@ -20,7 +20,7 @@ scheduler.cron '0 9 * * * America/Vancouver' do
 end
 
 # Send reminder SMS messages 4 hours before an event
-scheduler.each ('1m') do
+scheduler.every ('1m') do
   @events = Event.upcoming
   @events.each do |event|
     if Date.today.beginning_of_day == event.date_time.beginning_of_day
