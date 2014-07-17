@@ -16,6 +16,14 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "#{@commenter.username} has commented on #{@event.session_title}")
   end
 
+  def chat_notif(user, comment)
+    @user = user
+    @comment = comment
+    @commenter = comment.user
+    @url = 'http://www.factory-reset.net'
+    mail(to: @user.email, subject: "#{@commenter.username} has commented on General Chat")
+  end
+
   def event_invite(user, event)
     @user = user
     @event = event

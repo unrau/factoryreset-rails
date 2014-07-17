@@ -15,9 +15,10 @@ class ChatsController < ApplicationController
     @users = User.all
 
     if @chat.save
-      #@users.each do |user|
-        # Send a General Chat notification
-      #end
+      @users.each do |user|
+      # Only send a comment notification to RSVPd users who did not create the comment
+      UserMailer.comment_notif(user, @chat).deliver if user != current_user
+      end
     end
 
     redirect_to root_path
