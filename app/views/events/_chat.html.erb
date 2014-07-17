@@ -9,7 +9,7 @@
     <% @chats.each do |comment| %>
         <div class="comment" style="color: <%= comment.user.colour %>;">
           >> <%= comment.user.username %> @
-          <% if comment.created_at.beginning_of_day == Date.today.beginning_of_day %>
+          <% if comment.created_at.localtime.beginning_of_day == Date.today.beginning_of_day %>
               <%= comment.created_at.strftime('%l:%M %p') %>
           <% else %>
               <%= comment.created_at.strftime('%e %b') %>
