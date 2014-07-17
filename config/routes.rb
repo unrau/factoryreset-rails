@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, only: [:create]
+  resources :chats, only: [:create, :destroy]
   resources :events do
     resources :comments
     resources :rsvps, only: [:create, :destroy]

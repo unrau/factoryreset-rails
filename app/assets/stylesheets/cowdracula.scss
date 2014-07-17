@@ -295,6 +295,70 @@ img.pixel-me {
   }
 }
 
+.comments {
+  // attributes
+
+  .all-comments {
+    margin: 20px 10px 0 10px;
+
+    .comment {
+      margin: 3px 0 3px 0;
+
+      span.delete {
+        float: right;
+        margin-right: 10px;
+
+        a, a:link {
+          color: $grey30;
+        }
+        a:hover {
+          color: $orangered;
+        }
+        a:active {
+          color: $darkorangered;
+        }
+      }
+    }
+    .comment:hover {
+      background-color: $grey35;
+    }
+  }
+
+  .new-comment {
+    margin-top: 30px;
+
+    input {
+      border-radius: 0;
+      width: 620px;
+      margin: 0;
+      padding: 5px 10px 5px 10px;
+      font-size: 12px;
+    }
+
+    .comment-label {
+      margin: 10px 0 3px 10px;
+    }
+
+    .comment-field {
+      margin: 0;
+    }
+
+    .comment-button {
+      margin: 10px 0 10px 0;
+    }
+
+    .button-comment {
+      background-color: inherit;
+      font-size: 12px;
+      color: $grey20;
+      text-align: right;
+      margin: 0 0 10px 0;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+}
+
 
 
 
@@ -416,70 +480,6 @@ img.pixel-me {
 
     .is-host {
       background-color: $gold;
-    }
-  }
-
-  .comments {
-    // attributes
-
-    .all-comments {
-      margin: 20px 10px 0 10px;
-
-      .comment {
-        margin: 3px 0 3px 0;
-
-        span.delete {
-          float: right;
-          margin-right: 10px;
-
-          a, a:link {
-            color: $grey30;
-          }
-          a:hover {
-            color: $orangered;
-          }
-          a:active {
-            color: $darkorangered;
-          }
-        }
-      }
-      .comment:hover {
-        background-color: $grey35;
-      }
-    }
-
-    .new-comment {
-      margin-top: 30px;
-
-      input {
-        border-radius: 0;
-        width: 620px;
-        margin: 0;
-        padding: 5px 10px 5px 10px;
-        font-size: 12px;
-      }
-
-      .comment-label {
-        margin: 10px 0 3px 10px;
-      }
-
-      .comment-field {
-        margin: 0;
-      }
-
-      .comment-button {
-        margin: 10px 0 10px 0;
-      }
-
-      .button-comment {
-        background-color: inherit;
-        font-size: 12px;
-        color: $grey20;
-        text-align: right;
-        margin: 0 0 10px 0;
-        padding: 0;
-        border-radius: 0;
-      }
     }
   }
 }
