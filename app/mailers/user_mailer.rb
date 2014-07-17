@@ -21,7 +21,7 @@ class UserMailer < ActionMailer::Base
     @comment = comment
     @commenter = comment.user
     @url = 'http://www.factory-reset.net'
-    mail(to: @user.email, subject: "#{@commenter.username} has commented on General Chat")
+    mail(to: @user.email, subject: "#{@commenter.username} has commented in General Chat")
   end
 
   def event_invite(user, event)

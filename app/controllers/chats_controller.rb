@@ -2,10 +2,12 @@ class ChatsController < ApplicationController
 
   def index
     @chats = Chat.all
+    redirect_to root_path
   end
 
   def show
     @chats = Chat.all
+    redirect_to root_path
   end
 
   def create
@@ -16,9 +18,8 @@ class ChatsController < ApplicationController
 
     if @chat.save
       @users.each do |user|
-      # Only send a comment notification to RSVPd users who did not create the comment
-      UserMailer.comment_notif(user, @chat).deliver #if user != current_user
-      redirect_to root_path
+        # Only send a comment notification to RSVPd users who did not create the comment
+        UserMailer.chat_notif(user, @chat).deliver
       end
     end
 
