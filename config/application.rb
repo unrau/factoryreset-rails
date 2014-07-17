@@ -21,7 +21,7 @@ module Factoryreset
     # config.i18n.default_locale = :de
     I18n.enforce_available_locales = true
 
-    config.time_zone = 'America/Vancouver'
-    config.active_record.default_timezone = :local
+    #config.time_zone = 'America/Vancouver'
+    #config.active_record.default_timezone = :local
   end
 end
