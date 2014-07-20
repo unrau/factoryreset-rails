@@ -1,6 +1,6 @@
 <div class="welcome">
   <h4>&nbsp;</h4>
-  <h4>>> general_chat(1.month.old)</h4>
+  <h4>>> general_chat(show(1.month))</h4>
   <h4>>> </h4>
 </div>
 
@@ -8,11 +8,14 @@
   <div class="all-comments">
     <% @chats.each do |comment| %>
         <div class="comment" style="color: <%= comment.user.colour %>;">
+
+          <!-- ADDED IN_TIIME_ZONE -- TEST THIS ON PROD -->
+
           >> <%= comment.user.username %>
-          <% if comment.created_at.beginning_of_day == Date.today.beginning_of_day %>
-              @ <%= comment.created_at.strftime('%l:%M %p') %>
+          <% if comment.created_at.in_time_zone(Time.zone).beginning_of_day == Date.today.in_time_zone(Time.zone).beginning_of_day %>
+              @ <%= comment.created_at.in_time_zone(Time.zone).strftime('%l:%M %p') %>
           <% else %>
-              on <%= comment.created_at.strftime('%e %b') %>
+              on <%= comment.created_at.in_time_zone(Time.zone).strftime('%e %b') %>
           <% end %>
           => <%= comment.body %>
           <% if comment.user == current_user or current_user.id == 1 %>
