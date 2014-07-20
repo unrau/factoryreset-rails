@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
-  # Only allow unauthenticated users to access a controller with:
+  # Allow unauthenticated users access only to controllers with:
   # skip_before_filter :require_login
   before_filter :require_login
 

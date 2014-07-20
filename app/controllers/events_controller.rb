@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
       # Tell all members about the new event
       @users.each do |user|
-        UserMailer.event_invite(user, @event).deliver
+        #UserMailer.event_invite(user, @event).deliver
       end
 
       redirect_to root_path
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
 
         # Tell all members about the changes to the event
         @event.rsvps.each do |rsvp|
-          UserMailer.event_update(rsvp.user, @event).deliver
+          #UserMailer.event_update(rsvp.user, @event).deliver
         end
 
         format.html { redirect_to root_path, notice: 'event updated' }
@@ -65,7 +65,7 @@ class EventsController < ApplicationController
 
     # Tell all members about the cancellation
     @event.rsvps.each do |rsvp|
-      UserMailer.event_cancel(rsvp.user, @event).deliver
+      #UserMailer.event_cancel(rsvp.user, @event).deliver
     end
 
     @event.destroy
