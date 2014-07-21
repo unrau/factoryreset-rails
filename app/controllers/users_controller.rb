@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        #UserMailer.welcome_email(@user).deliver
+        UserMailer.welcome_email(@user).deliver
         format.html { redirect_to @user, notice: 'user created' }
       else
         format.html { render :new }
