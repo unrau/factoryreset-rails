@@ -1,7 +1,7 @@
 <div class="event">
 
   <div class="top">
-    <div class="date"><%= event.date_time.strftime('%a %e %b %Y') %></div>
+    <div class="date"><%= Time.zone.parse(event.date_time.to_s).strftime('%a %e %b %Y') %></div>
     <div class="game"><%= event.game_title %></div>
     <div class="clearfix"></div>
   </div>
@@ -15,7 +15,7 @@
 
     <div class="description">
       <h4><%= event.session_title %></h4>
-      <h4>Starts at <span class="time"><%= event.date_time.strftime('%l:%M %p') %></span></h4>
+      <h4>Starts at <span class="time"><%= Time.zone.parse(event.date_time.to_s).strftime('%l:%M %p') %></span></h4>
       <% event.description.lines.each do |line| %>
           <p><%= line %></p>
       <% end %>
@@ -97,12 +97,13 @@
   <div class="comments">
     <div class="all-comments">
       <% event.comments.each do |comment| %>
+        <% comment_time = Time.zone.parse(comment.created_at.to_s) %>
         <div class="comment" style="color: <%= comment.user.colour %>;">
           >> <%= comment.user.username %>
-          <% if comment.created_at.beginning_of_day == Date.today.beginning_of_day %>
-              @ <%= comment.created_at.strftime('%l:%M %p') %>
+          <% if comment_time.beginning_of_day == Time.zone.today.beginning_of_day %>
+              @ <%= comment_time.strftime('%l:%M %p') %>
           <% else %>
-              on <%= comment.created_at.strftime('%e %b') %>
+              on <%= comment_time.strftime('%e %b') %>
           <% end %>
           => <%= comment.body %>
           <% if comment.user == current_user or current_user.id == 1 %>
