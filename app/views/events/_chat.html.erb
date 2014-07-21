@@ -10,12 +10,13 @@
         <div class="comment" style="color: <%= comment.user.colour %>;">
 
           <!-- ADDED IN_TIIME_ZONE -- TEST THIS ON PROD -->
+          <% comment_time = Time.zone.parse(comment.created_at.to_s) %>
 
           >> <%= comment.user.username %>
-          <% if comment.created_at.in_time_zone(Time.zone).beginning_of_day == Date.today.in_time_zone(Time.zone).beginning_of_day %>
-              @ <%= comment.created_at.in_time_zone(Time.zone).strftime('%l:%M %p') %>
+          <% if comment_time.beginning_of_day == Time.zone.today.beginning_of_day %>
+              @ <%= comment_time.strftime('%l:%M %p') %>
           <% else %>
-              on <%= comment.created_at.in_time_zone(Time.zone).strftime('%e %b') %>
+              on <%= comment_time.strftime('%e %b') %>
           <% end %>
           => <%= comment.body %>
           <% if comment.user == current_user or current_user.id == 1 %>
