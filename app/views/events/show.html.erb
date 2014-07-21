@@ -6,7 +6,7 @@
 
   <div class="top">
 
-    <div class="date"><%= @event.date_time.to_date %></div>
+    <div class="date"><%= Time.zone.parse(@event.date_time.to_s).strftime('%a %e %b %Y') %></div>
 
     <div class="game"><%= @event.game_title %></div>
 
@@ -24,7 +24,7 @@
 
       <h4><%= @event.session_title %></h4>
 
-      <h4>Starts at <span class="time"><%= @event.date_time.to_time %></span></h4>
+      <h4>Starts at <span class="time"><%= Time.zone.parse(@event.date_time.to_s).strftime('%l:%M %p') %></span></h4>
 
       <% @event.description.lines.each do |line| %>
           <p><%= line %></p>

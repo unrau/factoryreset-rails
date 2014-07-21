@@ -8,8 +8,6 @@
   <div class="all-comments">
     <% @chats.each do |comment| %>
         <div class="comment" style="color: <%= comment.user.colour %>;">
-
-          <!-- ADDED IN_TIIME_ZONE -- TEST THIS ON PROD -->
           <% comment_time = Time.zone.parse(comment.created_at.to_s) %>
 
           >> <%= comment.user.username %>

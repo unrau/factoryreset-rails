@@ -1,6 +1,8 @@
 <%= @user.username %>, pupugi deigns to inform you...
 =====================================================
 
+<% event_time = Time.zone.parse(@event.date_time.to_s) %>
+
 <% if @user.email != @event.host.email %>
   <%= @event.host.username %> has created a new event for <%= @event.game_title %>:
 <% else %>
@@ -8,8 +10,8 @@
 <% end %>
 
 <%= @event.session_title %>
-Date: <%= @event.date_time.strftime('%a %e %b %Y') %>
-Time: <%= @event.date_time.strftime('%l:%M %p') %>
+Date: <%= event_time.strftime('%a %e %b %Y') %>
+Time: <%= event_time.strftime('%l:%M %p') %>
 Location: <%= @event.address_title %>
 Description: <%= @event.description %>
 

@@ -1,5 +1,7 @@
 <%= render 'header' %>
 
+<% event_time = Time.zone.parse(@event.date_time.to_s) %>
+
 <% if @user.email != @event.host.email %>
     <p>
       <strong style="color: <%= @event.host.colour %>; background-color: #4c4c4c;">
@@ -14,8 +16,8 @@
 <% end %>
 
 <h3><%= @event.session_title %></h3>
-<p><small>Date:</small> <strong><%= @event.date_time.strftime('%a %e %b %Y') %></strong></p>
-<p><small>Time:</small> <strong><%= @event.date_time.strftime('%l:%M %p') %></strong></p>
+<p><small>Date:</small> <strong><%= event_time.strftime('%a %e %b %Y') %></strong></p>
+<p><small>Time:</small> <strong><%= event_time.strftime('%l:%M %p') %></strong></p>
 <p><small>Location:</small> <strong><%= @event.address_title %></strong></p>
 <p><small>Description:</small> <strong><%= @event.description %></strong></p>
 

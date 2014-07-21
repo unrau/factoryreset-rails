@@ -1,12 +1,14 @@
 <%= @user.username %>, pupugi deigns to inform you...
 =====================================================
 
+<% event_time = Time.zone.parse(@event.date_time.to_s) %>
+
 The <%= @event.game_title %> event:
 
 <%= @event.session_title %>
 
-is in two days, on <%= @event.date_time.strftime('%a %e %b %Y') %>,
+is in two days, on <%= event_time.strftime("%A, the #{event_time.day.ordinalize} of %b, %Y") %>,
 
-and starts at <%= @event.date_time.strftime('%l:%M %p') %>.
+and starts at <%= event_time.strftime('%l:%M %p') %>.
 
 Go here to view the event: <%= @url %>

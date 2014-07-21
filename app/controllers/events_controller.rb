@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
       # Tell all members about the new event
       @users.each do |user|
-        #UserMailer.event_invite(user, @event).deliver
+        UserMailer.event_invite(user, @event).deliver
       end
 
       redirect_to root_path
