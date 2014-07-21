@@ -29,9 +29,9 @@ class UserMailer < ActionMailer::Base
     @event = event
     @url = 'http://www.factory-reset.net'
     if @user.email != @event.host.email
-      mail(to: @user.email, subject: "#{@event.host.username} has created an event for #{@event.date_time.strftime('%l:%M %p')}")
+      mail(to: @user.email, subject: "#{@event.host.username} has created an event for #{Time.zone.parse(@event.date_time.to_s).strftime('%l:%M %p')}")
     else
-      mail(to: @user.email, subject: "You have created an event for #{@event.date_time.strftime('%l:%M %p')}")
+      mail(to: @user.email, subject: "You have created an event for #{Time.zone.parse(@event.date_time.to_s).strftime('%l:%M %p')}")
     end
   end
 
@@ -88,7 +88,7 @@ class UserMailer < ActionMailer::Base
     @event = event
     @user = user
     @url = 'http://www.factory-reset.net'
-    mail(to: @user.email, subject: "Event Reminder: #{@event.game_title} is in on #{@event.date_time.strftime('%A')}")
+    mail(to: @user.email, subject: "Event Reminder: #{@event.game_title} is in on #{Time.zone.parse(@event.date_time.to_s).strftime('%A')}")
   end
 
 end
