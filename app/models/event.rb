@@ -10,10 +10,16 @@ class Event < ActiveRecord::Base
   validates :date_time, presence: true
   validates :address, presence: true
 
-  # Order upcoming events by ascending
-  scope :upcoming, -> { all.where('date_time >= ?', Date.today).order(date_time: :asc) }
-
-  # Order past events by descending
-  scope :past, -> { all.where('date_time < ?', Date.today).order(date_time: :desc) }
+  if Rails.env == 'production'
+    # Order upcoming events by ascending
+    scope :upcoming, -> { all.where('date_time >= ?', Time.today).order(date_time: :asc) }
+    # Order past events by descending
+    scope :past, -> { all.where('date_time < ?', Time.today).order(date_time: :desc) }
+  else
+    # Order upcoming events by ascending
+    scope :upcoming, -> { all.where('date_time >= ?', Time.zone.today).order(date_time: :asc) }
+    # Order past events by descending
+    scope :past, -> { all.where('date_time < ?', Time.zone.today).order(date_time: :desc) }
+  end
 
 end
