@@ -1,47 +1,51 @@
-<%= form_for(@event) do |f| %>
+<div class="form centred">
 
-    <p>
-      <%= f.label(:date_time, 'Date and time') %><br>
-      <%= f.datetime_select :date_time %>
-    </p>
+    <%= form_for(@event) do |f| %>
 
-    <p>
-      <%= f.label :game_title, 'Game Title' %><br>
-      <%= f.text_field :game_title %>
-    </p>
+        <p>
+          <%= f.label(:date_time, 'Date and time') %><br>
+          <%= f.datetime_select :date_time %>
+        </p>
 
-    <p>
-      <%= f.label :session_title, 'Session Title' %><br>
-      <%= f.text_field :session_title %>
-    </p>
+        <p>
+          <%= f.label :game_title, 'Game Title' %><br>
+          <%= f.text_field :game_title %>
+        </p>
 
-    <p>
-      <%= f.label(:event_image, 'Image URL (optional)') %><br>
-      <%= f.text_field :event_image %>
-    </p>
+        <p>
+          <%= f.label :session_title, 'Session Title' %><br>
+          <%= f.text_field :session_title %>
+        </p>
 
-    <p>
-      <%= f.label :address_title, 'Address Title' %><br>
-      <%= f.text_field :address_title %>
-    </p>
+        <p>
+          <%= f.label(:event_image, 'Image URL (optional)') %><br>
+          <%= f.text_field :event_image %>
+        </p>
 
-    <p>
-      <%= f.label :address %><br>
-      <%= f.text_field :address %>
-    </p>
+        <p>
+          <%= f.label :address_title, 'Address Title' %><br>
+          <%= f.text_field :address_title %>
+        </p>
 
-    <p>
-      <%= f.label :instructions, 'Address Instructions (optional)' %><br>
-      <%= f.text_field :instructions %>
-    </p>
+        <p>
+          <%= f.label :address %><br>
+          <%= f.text_field :address %>
+        </p>
 
-    <p>
-      <%= f.label :description, 'Event Description (optional)' %><br>
-      <%= f.text_area :description %>
-    </p>
+        <p>
+          <%= f.label :instructions, 'Address Instructions (optional)' %><br>
+          <%= f.text_field :instructions %>
+        </p>
 
-    <p>
-      <%= f.submit(value:'Submit',class:'button-small')%>
-    </p>
+        <p>
+          <%= f.label :description, 'Event Description (optional)' %><br>
+          <%= f.text_area :description %>
+        </p>
 
-<% end %>
+        <p>
+          <%= f.submit(value:'Submit',class:'button-small')%>
+        </p>
+
+    <% end %>
+
+</div>

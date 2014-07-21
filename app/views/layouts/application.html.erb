@@ -37,7 +37,9 @@
   </div>
 
   <!-- Shows debug info in the Rails Dev-Env -->
-  <%= debug(params) if Rails.env.development? %>
+  <div id="dev-debug">
+    <%= debug(params) if Rails.env.development? %>
+  </div>
 
 </div> <!-- container -->
 </body>

@@ -54,6 +54,7 @@ $hacker-font: 'PT Mono', monospace;
 
 // Vars: Others
 
+$break-large: 1400px;
 $event-border: 2px solid $grey0;
 
 // Mixins: Shadows
@@ -148,6 +149,10 @@ img.pixel-me {
 #container {
   width: 640px;
   margin: 0 auto 40px auto;
+
+  @media screen and (min-width: $break-large) {
+    width: $break-large;
+  }
 }
 
 #header {
@@ -155,6 +160,7 @@ img.pixel-me {
   width: 640px;
   height: 270px;
   background-image: $headerimg;
+  margin: 0 auto 0 auto;
 }
 
 #content {
@@ -162,6 +168,8 @@ img.pixel-me {
 }
 
 #footer {
+  width: 640px;
+  margin: 0 auto 0 auto;
 
   a, a:link {
     color: $glinkn;
@@ -172,6 +180,18 @@ img.pixel-me {
   a:active {
     color: $glinka;
   }
+}
+
+#all-events, #all-others {
+  @media screen and (min-width: $break-large) {
+    float: left;
+    margin: 0 30px 40px 30px;
+  }
+}
+
+#dev-debug {
+  width: 640px;
+  margin: 0 auto 0 auto;
 }
 
 
@@ -194,11 +214,21 @@ img.pixel-me {
 }
 
 .welcome {
-  margin: 0;
+  width: 640px;
+  margin: 0 auto 0 auto;
   color: $hackergreen;
 }
 .lastwelcome {
   margin-bottom: 40px;
+}
+
+.centred {
+  width: 640px;
+  margin: 0 auto 0 auto;
+}
+.not-centred {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .errors {
@@ -284,6 +314,7 @@ img.pixel-me {
 }
 
 .all-users {
+  width: 640px;
   color: $white;
 
   img {
@@ -296,7 +327,7 @@ img.pixel-me {
 }
 
 .comments {
-  // attributes
+  width: 640px;
 
   .all-comments {
     margin: 20px 10px 0 10px;
@@ -365,7 +396,7 @@ img.pixel-me {
 // Event Classes
 
 .event {
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
   width: 640px;
   @include box-shadow;
 
@@ -482,4 +513,7 @@ img.pixel-me {
       background-color: $gold;
     }
   }
+}
+.event:last-child {
+  margin-bottom: 60px;
 }

@@ -2,7 +2,7 @@
   <h4>>> show_all(users) | link(<%= link_to 'go back', root_path %>)</h4>
 </div>
 
-<table>
+<table class="centred">
   <thead>
     <tr>
       <th>Username</th>
@@ -28,10 +28,13 @@
           <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'WARNING! Delete this user? This cannot be undone.' } %></td>
         <% end %>
       </tr>
+      <tr>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path, class: 'button-wee' %>
+<div class="centred">
+  <br />
+  <%= link_to 'New User', new_user_path, class: 'button-wee' %>
+</div>

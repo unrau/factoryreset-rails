@@ -5,26 +5,30 @@
   <% end %>
 </div>
 
-<p>
-  <strong>Username:</strong>
-  <span style="color: <%= @user.colour %>"><%= @user.username %></span>
-</p>
+<div class="centred">
 
-<p>
-  <strong>Email:</strong>
-  <span style="color: <%= @user.colour %>"><%= @user.email %></span>
-</p>
+    <p>
+      <strong>Username:</strong>
+      <span style="color: <%= @user.colour %>"><%= @user.username %></span>
+    </p>
 
-<p>
-  <strong>Telephone:</strong>
-  <span style="color: <%= @user.colour %>"><%= @user.telephone %></span>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <span style="color: <%= @user.colour %>"><%= @user.email %></span>
+    </p>
 
-<p>
-  <strong>Picture:</strong><br />
-  <img src="<%= @user.picture %>" class="pixel-me"/>
-</p>
+    <p>
+      <strong>Telephone:</strong>
+      <span style="color: <%= @user.colour %>"><%= @user.telephone %></span>
+    </p>
 
-<% if @user == current_user or current_user.id == 1 %>
-  <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button-wee' %>
-<% end %>
+    <p>
+      <strong>Picture:</strong><br />
+      <img src="<%= @user.picture %>" class="pixel-me"/>
+    </p>
+
+    <% if @user == current_user or current_user.id == 1 %>
+      <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button-wee' %>
+    <% end %>
+
+</div>

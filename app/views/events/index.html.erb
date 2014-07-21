@@ -4,27 +4,42 @@
   <h4>>> show_events(upcoming) | link(<a href="/old">show past events</a>)</h4>
 </div>
 
-<%= render @events %>
+<div id="all-events">
 
-<%= render 'chat' %>
+  <%= render @events %>
 
-<div class="welcome">
-  <h4>>> all_users(show)</h4>
-  <h4>>> </h4>
-</div>
-<div class="all-users">
-  <% @users.each do |user| %>
-      <%= link_to image_tag(user.picture), user_path(user) %>
-  <% end %>
 </div>
 
-<div class="welcome">
-  <h4>>> user_resources(show)</h4>
-  <h4>>> </h4>
-  <h4>>> <a href="https://docs.google.com/folderview?id=0B7Ru8Rq7hTudaEktQTB0VjFhUXM" target="_blank">Second War Documents</a></h4>
-  <h4>>> <a href="http://charactersheets.minotaur.cc/" target="_blank">Pathfinder Character Sheets</a></h4>
-  <h4>>> <a href="http://minus.com/mdnd35" target="_blank">D&D 3.5e PDFs</a></h4>
-  <h4>>> <a href="http://www.w3schools.com/tags/ref_colorpicker.asp" target="_blank">HEX Colour Picker</a></h4>
-  <h4>>> <a href="http://imgur.com/" target="_blank">Free Image Hosting</a></h4>
-  <h4>>> </h4>
+<div id="all-others">
+
+  <div class="welcome not-centred">
+
+    <h4>>> general_chat(show(1.month))</h4>
+    <h4>>> </h4>
+  </div>
+
+  <%= render 'chat' %>
+
+  <div class="welcome not-centred">
+    <h4>>> user_resources(show)</h4>
+    <h4>>> </h4>
+    <h4>>> <a href="https://docs.google.com/folderview?id=0B7Ru8Rq7hTudaEktQTB0VjFhUXM" target="_blank">Second War Documents</a></h4>
+    <h4>>> <a href="http://charactersheets.minotaur.cc/" target="_blank">Pathfinder Character Sheets</a></h4>
+    <h4>>> <a href="http://minus.com/mdnd35" target="_blank">D&D 3.5e PDFs</a></h4>
+    <h4>>> <a href="http://www.w3schools.com/tags/ref_colorpicker.asp" target="_blank">HEX Colour Picker</a></h4>
+    <h4>>> <a href="http://imgur.com/" target="_blank">Free Image Hosting</a></h4>
+    <h4>>> </h4>
+  </div>
+
+  <div class="welcome not-centred">
+    <h4>>> all_users(show)</h4>
+    <h4>>> </h4>
+  </div>
+
+  <div class="all-users">
+    <% @users.each do |user| %>
+        <%= link_to image_tag(user.picture), user_path(user) %>
+    <% end %>
+  </div>
+
 </div>

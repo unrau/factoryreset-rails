@@ -8,17 +8,21 @@
   <% end %>
 </div>
 
-<%= form_for(:session, url: sessions_path) do |f| %>
+<div class="centred">
 
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
+    <%= form_for(:session, url: sessions_path) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+      <div class="field">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div>
 
-    <%= f.submit 'Log In', class: 'button-small' %>
-<% end %>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+
+        <%= f.submit 'Log In', class: 'button-small' %>
+    <% end %>
+
+</div>
