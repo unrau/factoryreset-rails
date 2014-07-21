@@ -164,7 +164,7 @@ img.pixel-me {
 }
 
 #content {
-  margin: 0 0 40px 0;
+  margin: 0 0 0 0;
 }
 
 #footer {
@@ -187,6 +187,12 @@ img.pixel-me {
     float: left;
     margin: 0 30px 40px 30px;
   }
+}
+#all-events {
+  margin-bottom: 60px;
+}
+#all-others {
+  margin-bottom: 30px;
 }
 
 #dev-debug {
@@ -513,7 +519,4 @@ img.pixel-me {
       background-color: $gold;
     }
   }
-}
-.event:last-child {
-  margin-bottom: 60px;
 }
