@@ -243,7 +243,7 @@ img.pixel-me {
 }
 
 .button-wee {
-  margin-right: 10px;
+  margin: 0 10px 0 0;
   padding: 5px 10px 5px 10px;
   background-color: $gold;
   color: $darkorangered !important;
@@ -394,6 +394,10 @@ img.pixel-me {
       border-radius: 0;
     }
   }
+}
+
+.show-user {
+  margin-bottom: 60px !important;
 }
 
 

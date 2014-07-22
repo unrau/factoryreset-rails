@@ -6,7 +6,7 @@
 <% if @user.email != @event.host.email %>
   <%= @event.host.username %> has created a new event for <%= @event.game_title %>:
 <% else %>
-  You have created a new event for <%= @event.game_title %>:
+  You are hosting a new event for <%= @event.game_title %>:
 <% end %>
 
 <%= @event.session_title %>

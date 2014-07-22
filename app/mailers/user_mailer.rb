@@ -31,7 +31,7 @@ class UserMailer < ActionMailer::Base
     if @user.email != @event.host.email
       mail(to: @user.email, subject: "#{@event.host.username} has created an event for #{Time.zone.parse(@event.date_time.to_s).strftime('%l:%M %p')}")
     else
-      mail(to: @user.email, subject: "You have created an event for #{Time.zone.parse(@event.date_time.to_s).strftime('%l:%M %p')}")
+      mail(to: @user.email, subject: "You are hosting a new event for #{Time.zone.parse(@event.date_time.to_s).strftime('%l:%M %p')}")
     end
   end
 
@@ -42,7 +42,7 @@ class UserMailer < ActionMailer::Base
     if @user.email != @event.host.email
       mail(to: @user.email, subject: "#{@event.host.username} has updated #{@event.session_title}")
     else
-      mail(to: @user.email, subject: "You have updated #{@event.session_title}")
+      mail(to: @user.email, subject: "Your event has been updated: #{@event.session_title}")
     end
   end
 
@@ -52,7 +52,7 @@ class UserMailer < ActionMailer::Base
     if @user.email != @event.host.email
       mail(to: @user.email, subject: "#{@event.host.username} has cancelled #{@event.session_title}")
     else
-      mail(to: @user.email, subject: "You have cancelled #{@event.session_title}")
+      mail(to: @user.email, subject: "Your event has been cancelled: #{@event.session_title}")
     end
   end
 

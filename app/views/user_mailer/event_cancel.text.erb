@@ -4,7 +4,7 @@
 <% if @user.email != @event.host.email %>
     <%= @event.host.username %> has cancelled the event:
 <% else %>
-    You have cancelled the event:
+    Your event has been cancelled:
 <% end %>
 
 <%= @event.session_title %>

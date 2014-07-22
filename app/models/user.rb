@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :chats
 
-  before_save { self.username = username.downcase.gsub(/\s+/, '_') }
+  before_save { self.username = username.gsub(/\s+/, '_') }
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 

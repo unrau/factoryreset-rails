@@ -6,7 +6,7 @@
 <% if @user.email != @event.host.email %>
     <%= @event.host.username %> has updated the event:
 <% else %>
-    You have updated the event:
+    Your event has been updated:
 <% end %>
 
 <%= @event.session_title %>
