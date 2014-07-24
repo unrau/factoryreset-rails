@@ -82,7 +82,7 @@ Rails.application.configure do
 
   # ActionMailer configuration
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'www.factory-reset.net' }
+  config.action_mailer.default_url_options = { :host => 'facset.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address: 'smtp.sendgrid.net',
