@@ -26,7 +26,7 @@ module EventsHelper
         'I used to be an adventurer like you...',
         'Isn\'t Chloe just SO nice?',
         'Oh my god, take me. Take me now, right here on this SQL table!',
-        'Have you heard of our Lord and Saviour, Genova?',
+        'Have you heard of our Lord and Saviour, J.E.N.O.V.A.?',
         'Futomara o daisuki yo ;)',
         'Yakisoba gozaimasu i desu!!! :3',
         'It\'s dangerous to go alone!',
