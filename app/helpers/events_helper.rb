@@ -21,7 +21,7 @@ module EventsHelper
         'Do, or do not. There is no try.',
         'Have you ever made love to a woman, Jon Snow?',
         'This website sucks.',
-        'I put my finder in your butt.',
+        'I put my finger in your butt.',
         'This is exciting!',
         'I used to be an adventurer like you...',
         'Isn\'t Chloe just SO nice?',
