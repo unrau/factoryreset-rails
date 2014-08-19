@@ -45,9 +45,9 @@ class EventsController < ApplicationController
       if @event.update(event_params)
 
         # Tell all members about the changes to the event
-        @event.rsvps.each do |rsvp|
-          UserMailer.event_update(rsvp.user, @event).deliver
-        end
+        #@event.rsvps.each do |rsvp|
+        #  UserMailer.event_update(rsvp.user, @event).deliver
+        #end
 
         format.html { redirect_to root_path, notice: 'event updated' }
       else
