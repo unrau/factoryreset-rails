@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.upcoming
     @users = User.all_by_name
-    @chats = Chat.one_month_young
+    @chats = Chat.one_week_young
   end
 
   def old
