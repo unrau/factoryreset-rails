@@ -40,7 +40,7 @@ scheduler.every '1m' do
     if in_four_hours.beginning_of_day == event_time.beginning_of_day
       if in_four_hours.hour == event_time.hour && in_four_hours.min == event_time.min
         event.rsvps.each do |rsvp|
-          blowerio['/messages'].post :to => "+1#{rsvp.user.telephone.gsub!('.','')}", :message => "See you at #{event.address_title} for #{event.game_title} at #{event.date_time.strftime('%l:%M %p')}! :3"
+          blowerio['/messages'].post :to => "+1#{rsvp.user.telephone.gsub!('.','')}", :message => "See you at #{event.address_title} for #{event.game_title} at#{event.date_time.strftime('%l:%M %p')}! :3"
         end
       end
     end
