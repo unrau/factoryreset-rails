@@ -14,7 +14,7 @@
 
   </div>
 
-  <% if @event.event_image && @event.event_image.ends_with?('jpg', 'jpeg', 'gif', 'png') %>
+  <% if @event.event_image && @event.event_image.downcase.ends_with?('jpg', 'jpeg', 'gif', 'png') %>
       <a href="<%= event.event_image %>" target="_blank">
         <div class="image"><img src="<%= event.event_image %>" /></div>
       </a>
