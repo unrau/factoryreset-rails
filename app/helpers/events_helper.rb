@@ -15,7 +15,8 @@ module EventsHelper
         'Okay, so here\'s the plan... We kill Abe. And then frame the Imperials!',
         'I attach my Swan Boat Feather Token to an arrow!',
         'I believe they came by boat.',
-        'Let\'s drop this base!'
+        'Let\'s drop this base!',
+        'It\'ll make you, as the French say, le sové pussé.'
     ]
     messages[Random.new.rand(messages.length)]
   end
