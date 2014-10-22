@@ -6,7 +6,7 @@ class RsvpsController < ApplicationController
     @rsvp.user = current_user
     @url = 'http://www.factory-reset.net'
     if @rsvp.save
-      UserMailer.rsvp_confirm(@rsvp.user, @event).deliver
+      #UserMailer.rsvp_confirm(@rsvp.user, @event).deliver
       UserMailer.rsvp_confirm_host(@rsvp.user, @event).deliver
       redirect_to root_path
     end
@@ -17,7 +17,7 @@ class RsvpsController < ApplicationController
     @rsvp = @event.rsvps.find(params[:id])
     @url = 'http://www.factory-reset.net'
     if @rsvp.destroy
-      UserMailer.rsvp_remove(@rsvp.user, @event).deliver
+      #UserMailer.rsvp_remove(@rsvp.user, @event).deliver
       UserMailer.rsvp_remove_host(@rsvp.user, @event).deliver
       redirect_to root_path
     end
