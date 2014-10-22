@@ -11,8 +11,8 @@ class Event < ActiveRecord::Base
   validates :address, presence: true
 
   # Order upcoming events by ascending
-  scope :upcoming, -> { all.where('Time.zone.parse(date_time.to_s) >= ?', Time.zone.today).order(date_time: :asc) }
+  scope :upcoming, -> { all.where('date_time >= ?', Time.zone.today + 1.day).order(date_time: :asc) }
   # Order past events by descending
-  scope :past, -> { all.where('Time.zone.parse(date_time.to_s) < ?', Time.zone.today).order(date_time: :desc) }
+  scope :past, -> { all.where('date_time < ?', Time.zone.today + 1.day).order(date_time: :desc) }
 
 end
