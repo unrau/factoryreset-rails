@@ -18,4 +18,7 @@
 # Ignore application configuration
 /config/application.yml
 
+# Ignore environment variables
+/config/secrets.yml
+
 .idea/workspace.xml
